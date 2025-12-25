@@ -1,39 +1,85 @@
 import Link from "next/link";
-import Badge from "./Badge";
-import { Star, MapPin, ArrowRight } from "lucide-react"; // install lucide-react
+import { Star, MapPin, ArrowRight, Coffee } from "lucide-react";
 
-export default function CafeCard({ cafe }: { cafe: any }) {
+type Cafe = {
+  id: number;
+  name: string;
+  slug: string;
+  address: string;
+  rating: number;
+  vibe: string[];
+};
+
+export default function CafeCard({ cafe }: { cafe: Cafe }) {
   return (
     <Link
       href={`/cafe/${cafe.slug}`}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+      /* p-4 di mobile, p-6 di desktop */
+      className="group relative flex flex-col justify-between overflow-hidden rounded-xl md:rounded-2xl border border-white/5 bg-zinc-900/40 p-4 md:p-6 transition-all duration-300 hover:-translate-y-2 hover:border-amber-500/40 hover:bg-zinc-800/60 hover:shadow-2xl hover:shadow-amber-500/10"
     >
-      <div>
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-gray-800 group-hover:text-amber-600 transition-colors">
+      <div className="relative z-10">
+        {/* Header: Nama & Rating */}
+        <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between md:gap-2">
+          <h2 className="text-sm md:text-xl font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors line-clamp-2 min-h-[2.5rem] md:min-h-0">
             {cafe.name}
           </h2>
-          <div className="flex items-center gap-1 rounded-full bg-amber-50 px-2 py-1 text-xs font-bold text-amber-600">
-            <Star size={14} fill="currentColor" />
+          
+          <div className="flex w-fit items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 md:py-1 text-[10px] md:text-sm font-bold text-amber-500 border border-amber-500/20">
+            <Star size={10} className="md:w-3.5" fill="currentColor" />
             {cafe.rating.toFixed(1)}
           </div>
         </div>
 
-        <div className="mt-2 flex items-start gap-1 text-sm text-gray-500">
-          <MapPin size={16} className="mt-0.5 shrink-0" />
-          <p className="line-clamp-2">{cafe.address}</p>
+        {/* Alamat dengan Icon */}
+        <div className="mt-2 md:mt-3 flex items-start gap-1 text-zinc-400">
+          <MapPin size={12} className="mt-0.5 shrink-0 text-zinc-500 md:w-4" />
+          <p className="text-[10px] md:text-sm leading-relaxed line-clamp-1 md:line-clamp-2 group-hover:text-zinc-300 transition-colors">
+            {cafe.address}
+          </p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {cafe.vibe.slice(0, 3).map((v: string) => (
-            <Badge key={v} text={v} />
-          ))}
+        {/* Vibe Tags - Disederhanakan untuk mobile agar tidak penuh */}
+        <div className="mt-3 md:mt-5 flex flex-wrap gap-1.5 md:gap-2">
+          {/* Di mobile cuma muncul 1, di desktop muncul 3 */}
+          <div className="flex md:hidden">
+            {cafe.vibe.slice(0, 1).map((v) => (
+              <span key={v} className="rounded-md bg-zinc-800/50 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-700/50">
+                {v}
+              </span>
+            ))}
+          </div>
+          <div className="hidden md:flex flex-wrap gap-2">
+            {cafe.vibe.slice(0, 3).map((v) => (
+              <span key={v} className="rounded-md bg-zinc-800/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-700/50 group-hover:border-amber-500/30 group-hover:text-amber-200 transition-colors">
+                {v}
+              </span>
+            ))}
+          </div>
+          {cafe.vibe.length > 3 && (
+            <span className="text-[9px] md:text-[10px] text-zinc-500 font-medium self-center">
+              +{cafe.vibe.length - (typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3)}
+            </span>
+          )}
         </div>
       </div>
 
-      <div className="mt-6 flex items-center text-sm font-semibold text-amber-600 opacity-0 transition-opacity group-hover:opacity-100">
-        Lihat detail <ArrowRight size={16} className="ml-1" />
+      {/* Footer: Area Aksi */}
+      <div className="mt-4 md:mt-8 pt-3 md:pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+        <div className="flex items-center gap-1 md:gap-2 text-zinc-500 group-hover:text-amber-400/80 transition-colors">
+            <Coffee size={12} className="md:w-4" />
+            <span className="text-[8px] md:text-[11px] font-bold uppercase tracking-widest truncate max-w-[50px] md:max-w-none">Cafe</span>
+        </div>
+        
+        <div className="flex items-center text-[10px] md:text-sm font-bold text-zinc-400 group-hover:text-amber-400 transition-all">
+          <span className="hidden md:inline opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+            Lihat detail
+          </span>
+          <ArrowRight size={14} className="ml-1 md:w-[18px] transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
       </div>
+
+      {/* Efek Glow */}
+      <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-amber-500/5 via-transparent to-transparent" />
     </Link>
   );
 }
