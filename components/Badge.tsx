@@ -1,10 +1,6 @@
-type BadgeProps = {
-  text: string;
-};
-
-export default function Badge({ text }: BadgeProps) {
+export default function Badge({ text }: { text: string }) {
   return (
-    <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700">
+    <span className="inline-block rounded-md bg-amber-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-700 border border-amber-100">
       {text}
     </span>
   );
