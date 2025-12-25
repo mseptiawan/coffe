@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "Un.Favorite Coffee and Noodle",
+    "slug": "un-favorite-coffee-and-noodle",
+    "address": "Jl. Mayor Ruslan 1970, Palembang",
+    "maps": "https://maps.app.goo.gl/kvzjeP7wGRcm2PoNA",
+    "coordinates": {
+      "lat": -2.9737922,
+      "lng": 104.7557245
+    },
+    "open_hours": "Senin: Tutup | Selasa–Minggu: 10.00–23.00",
+    "price_range": "Rp20.000 – Rp60.000",
+    "instagram": "https://www.instagram.com/unfavoriteee/",
+    "rating": 4.9,
+    "vibe": ["santai", "kasual", "cozy", "nongkrong"],
+    "description": "Un.Favorite Coffee and Noodle dikenal sebagai tempat dengan suasana santai dan kasual yang membuat pengunjung nyaman untuk nongkrong. Banyak pengunjung merasa tempat ini cocok untuk berkumpul bersama teman atau sekadar melepas penat, dengan vibe yang tidak terlalu formal dan terasa ramah. Di waktu tertentu, suasana bisa terasa lebih hidup, terutama saat jam ramai.\n\nDari sisi menu, kombinasi kopi dan hidangan mie menjadi hal yang paling sering disebut oleh pengunjung. Rasa makanan dan minuman dinilai memuaskan dan cukup konsisten, dengan harga yang masih tergolong terjangkau. Tempat ini sering dianggap worth it untuk didatangi, baik untuk makan ringan maupun nongkrong lebih lama.\n\nFasilitas yang tersedia dinilai cukup menunjang kenyamanan, dengan area duduk yang membuat pengunjung betah berlama-lama. Meski begitu, pada jam makan atau akhir pekan tempat ini bisa terasa lebih ramai. Untuk pengalaman yang lebih nyaman, banyak pengunjung menyarankan datang di luar jam sibuk."
+  },
+  {
+    "id": 2,
+    "name": "Kopi Nostalgia 2",
+    "slug": "kopi-nostalgia-2",
+    "address": "Jl. Bangau, 9 Ilir, Palembang",
+    "maps": "https://maps.app.goo.gl/w9j8RMPCY8aec2n27",
+    "coordinates": {
+      "lat": -2.9679202,
+      "lng": 104.765883
+    },
+    "open_hours": "Senin–Minggu: 08.00–23.00",
+    "price_range": "Rp25.000 – Rp60.000",
+    "instagram": "https://www.instagram.com/kopinostalgia_id/",
+    "rating": 4.5,
+    "vibe": ["santai", "cozy", "kasual", "nongkrong", "wfc ringan"],
+    "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Kopi Nostalgia 2 dikenal sebagai tempat nongkrong yang nyaman dengan suasana santai dan kasual. Tersedia area indoor dan outdoor, di mana area indoor sering dianggap lebih homey dan tenang, sementara area outdoor menjadi pilihan alternatif saat tempat sedang ramai. Banyak pengunjung merasa betah berlama-lama, terutama pada sore hingga malam hari.\n\nDari sisi menu, kopi dan makanan yang disajikan mendapatkan banyak respons positif. Beberapa menu seperti kopi, matcha latte, sate taichan, dan rice bowl cukup sering disebut oleh pengunjung. Rasa dan porsi dinilai sebanding dengan harga yang ditawarkan, sehingga tempat ini dianggap cukup worth it, meskipun ada beberapa catatan mengenai harga add-on tertentu yang terasa relatif lebih tinggi.\n\nUntuk fasilitas, Kopi Nostalgia 2 menyediakan WiFi, colokan listrik, musholla, serta toilet yang bersih dan lengkap, sehingga mendukung aktivitas nongkrong maupun kerja ringan. Meski demikian, beberapa pengunjung mencatat bahwa suasana bisa menjadi lebih ramai di jam-jam tertentu dan pelayanan terkadang terasa kurang konsisten, sehingga disarankan datang di luar jam sibuk bagi yang menginginkan suasana lebih tenang."
+  }
+]
