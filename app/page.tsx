@@ -5,6 +5,7 @@ import cafes from "@/data/cafes.json";
 import CafeCard from "@/components/CafeCard";
 import CafeMap from "@/components/CafeMap";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ServiceCTA from "@/components/ServiceCTA";
 
 export default function Home() {
   // CONFIGURATION
@@ -24,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-4 md:px-6 py-12 space-y-12">
+  <main className="mx-auto max-w-6xl px-4 md:px-6 py-6 space-y-6">
       <header className="text-center md:text-left space-y-3">
         <div className="inline-block rounded-full bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-500 border border-amber-500/20">
           ☕ Coffee Directory
@@ -42,7 +43,15 @@ export default function Home() {
       <section className="overflow-hidden rounded-3xl border-4 border-zinc-800 shadow-2xl">
         <CafeMap cafes={cafes} />
       </section>
+<div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-white/70">
+  <span>📍 14 cafe terdaftar</span>
+  <span>☕ Hidden gem & hits</span>
+  <span>💻 WFC friendly</span>
+</div>
 
+      <div className="-mt-6"> 
+      <ServiceCTA />
+</div>
       {/* GRID SECTION */}
       <div className="space-y-6">
         <div className="flex items-center justify-between px-1">
