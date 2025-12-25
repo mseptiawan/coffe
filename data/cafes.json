@@ -32,5 +32,248 @@
     "rating": 4.5,
     "vibe": ["santai", "cozy", "kasual", "nongkrong", "wfc ringan"],
     "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Kopi Nostalgia 2 dikenal sebagai tempat nongkrong yang nyaman dengan suasana santai dan kasual. Tersedia area indoor dan outdoor, di mana area indoor sering dianggap lebih homey dan tenang, sementara area outdoor menjadi pilihan alternatif saat tempat sedang ramai. Banyak pengunjung merasa betah berlama-lama, terutama pada sore hingga malam hari.\n\nDari sisi menu, kopi dan makanan yang disajikan mendapatkan banyak respons positif. Beberapa menu seperti kopi, matcha latte, sate taichan, dan rice bowl cukup sering disebut oleh pengunjung. Rasa dan porsi dinilai sebanding dengan harga yang ditawarkan, sehingga tempat ini dianggap cukup worth it, meskipun ada beberapa catatan mengenai harga add-on tertentu yang terasa relatif lebih tinggi.\n\nUntuk fasilitas, Kopi Nostalgia 2 menyediakan WiFi, colokan listrik, musholla, serta toilet yang bersih dan lengkap, sehingga mendukung aktivitas nongkrong maupun kerja ringan. Meski demikian, beberapa pengunjung mencatat bahwa suasana bisa menjadi lebih ramai di jam-jam tertentu dan pelayanan terkadang terasa kurang konsisten, sehingga disarankan datang di luar jam sibuk bagi yang menginginkan suasana lebih tenang."
-  }
+  },
+{
+  "id": 3,
+  "name": "Luthier Coffee",
+  "slug": "luthier-coffee",
+  "address": "9 Ilir, Kota Palembang",
+  "maps": "https://maps.app.goo.gl/GA6Bryag5Cg5TbAs7",
+  "coordinates": {
+    "lat": -2.9669472,
+    "lng": 104.7634491
+  },
+  "open_hours": "Senin–Minggu: 07.00–22.00",
+  "price_range": "Rp25.000 – Rp60.000",
+  "instagram": "https://www.instagram.com/luthiercoffee/",
+  "rating": 4.7,
+  "vibe": [
+    "specialty coffee",
+    "cozy",
+    "kasual",
+    "aesthetic",
+    "coffee enthusiast",
+    "wfc ringan"
+  ],
+  "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Luthier Coffee dikenal sebagai specialty coffee shop dengan suasana yang cozy dan cukup estetis. Tempat ini sering disebut sebagai rumah bagi barista berprestasi tingkat nasional, sehingga memberikan kesan serius terhadap kualitas kopi yang disajikan. Suasananya cenderung santai namun tetap profesional, cocok untuk nongkrong, menikmati kopi dengan tenang, atau sekadar bersantai bersama teman.\n\nDari sisi menu, kopi menjadi daya tarik utama dengan pilihan espresso-based dan manual brew menggunakan berbagai biji kopi lokal maupun impor. Banyak pengunjung menilai kualitas kopi berada di level tinggi, dengan rasa yang konsisten dan berkarakter. Selain minuman, tersedia juga menu makanan dan dessert seperti pancake, spring roll, rice bowl, hingga pastry, yang secara umum dinilai enak dan sebanding dengan harga, meskipun beberapa menu makanan dianggap biasa dibandingkan kualitas kopinya.\n\nUntuk fasilitas, Luthier Coffee menyediakan area duduk indoor dengan suasana yang cukup nyaman serta WiFi yang kencang, sehingga mendukung aktivitas nongkrong maupun kerja ringan. Namun, beberapa ulasan menyebutkan bahwa tempat bisa terasa ramai di jam tertentu dan sebagian area memiliki pencahayaan yang agak redup. Meski begitu, pelayanan barista yang ramah dan pengetahuan mereka tentang kopi menjadi nilai tambah yang sering diapresiasi oleh pengunjung."
+},
+{
+  "id": 4,
+  "name": "Dobu Coffee",
+  "slug": "dobu-coffee",
+  "address": "Jl. Merpati No.6, 9 Ilir, Kec. Ilir Timur II, Kota Palembang, Sumatera Selatan 30114",
+  "maps": "https://maps.app.goo.gl/wjvjD7jxcJHM9JDN9",
+  "coordinates": {
+    "lat": -2.9688898,
+    "lng": 104.7623639
+  },
+  "open_hours": "Senin–Minggu: 08.00–23.00",
+  "price_range": "Rp20.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/dobucoffee/",
+  "rating": 4.6,
+  "vibe": [
+    "santai",
+    "cozy",
+    "kasual",
+    "luas",
+    "nongkrong",
+    "kerja kelompok",
+    "meeting"
+  ],
+  "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Dobu Coffee dikenal sebagai tempat nongkrong yang cukup luas dengan suasana santai dan nyaman. Tersedia area indoor dan outdoor, termasuk area belakang yang sering disebut lebih nyaman untuk bersantai atau menikmati live music. Tempat ini juga kerap dipilih untuk hangout hingga malam hari karena atmosfernya yang rileks dan tidak terburu-buru.\n\nDari sisi menu, Dobu Coffee menawarkan pilihan kopi dan makanan dengan harga yang relatif terjangkau. Beberapa pengunjung merekomendasikan menu makanan lokal seperti pindang dan patin bakar, serta minuman non-kopi yang cukup variatif. Secara umum, rasa makanan dan minuman dinilai cukup memuaskan dan sebanding dengan harga, meskipun ada beberapa catatan terkait ketersediaan menu di waktu tertentu.\n\nUntuk fasilitas, Dobu Coffee menyediakan WiFi, AC, serta area duduk yang mendukung aktivitas kerja kelompok, meeting, maupun acara kecil. Pelayanan sering disebut ramah dan membantu, namun pada jam ramai beberapa pengunjung mencatat keterbatasan meja serta parkir mobil yang mengandalkan area pinggir jalan. Datang di luar jam sibuk biasanya memberikan pengalaman yang lebih nyaman."
+}
+,
+{
+  "id": 5,
+  "name": "MamMee Bakery & Kopihaus",
+  "slug": "mammee-bakery-kopihaus",
+  "address": "Ruko Taman Harapan Indah, Jl. Letda Abdul Rozak No.20 Blok B 15, Duku, Kec. Ilir Timur II, Kota Palembang, Sumatera Selatan 30114",
+  "maps": "https://maps.app.goo.gl/uScJBQB4bHaWkfkC6",
+  "coordinates": {
+    "lat": -2.9688898,
+    "lng": 104.7623639
+  },
+  "open_hours": "Senin–Minggu: 07.00–23.00",
+  "price_range": "Rp50.000 – Rp75.000",
+  "instagram": "https://www.instagram.com/mammeebakery/",
+  "rating": 4.6,
+  "vibe": [
+    "keluarga",
+    "cozy",
+    "kasual",
+    "ramah meeting",
+    "strategis",
+    "makan",
+    "nongkrong"
+  ],
+  "description": "MamMee Bakery & Kopihaus dikenal sebagai restoran dan bakery yang nyaman dengan pilihan menu yang sangat beragam. Tempat ini memiliki area yang cukup luas dengan dua lantai, sehingga sering dipilih untuk makan bersama keluarga, pertemuan kerja, maupun acara kecil. Suasananya tergolong cozy dan kasual, meskipun pada jam-jam tertentu tempat bisa terasa cukup ramai.\n\nDari sisi menu, MamMee menyajikan berbagai pilihan makanan mulai dari hidangan khas Palembang seperti pindang, pempek, dan nasi goreng, hingga menu western, bakery, cake, dan dessert. Banyak pengunjung menilai rasa makanan enak dengan porsi yang cukup memuaskan, serta variasi menu yang membuat tempat ini cocok untuk sarapan, makan siang, hingga makan malam. Harga dinilai relatif standar untuk ukuran restoran, dengan beberapa menu dianggap premium.\n\nUntuk fasilitas dan pelayanan, MamMee Bakery & Kopihaus menyediakan area indoor ber-AC, smoking area, WiFi, serta parkir yang cukup memadai. Pelayanan umumnya dinilai ramah dan cepat, meskipun beberapa ulasan mencatat kendala saat kondisi ramai, terutama terkait waktu tunggu dan pesanan online. Secara keseluruhan, tempat ini sering direkomendasikan sebagai pilihan aman untuk makan bersama, meeting, maupun sekadar nongkrong santai."
+},
+{
+  "id": 6,
+  "name": "Cetroo Coffee Rajawali",
+  "slug": "cetroo-coffee-rajawali",
+  "address": "Jl. Rajawali No.22, 9 Ilir, Kec. Ilir Timur II, Kota Palembang, Sumatera Selatan 30114",
+  "maps": "https://maps.app.goo.gl/jRJ6C13uzKJZT84g9",
+  "coordinates": {
+    "lat": -2.9733663,
+    "lng": 104.7641146
+  },
+  "open_hours": "Senin: Tutup | Selasa–Minggu: 12.00–20.00",
+  "price_range": "Rp20.000 – Rp40.000",
+  "instagram": "https://www.instagram.com/cetroocoffee.plmrajawali/",
+  "rating": 4.8,
+  "vibe": [
+    "santai",
+    "cozy",
+    "kasual",
+    "workspace friendly",
+    "affordable",
+    "kerja ringan",
+    "nongkrong"
+  ],
+  "description": "Cetroo Coffee Rajawali dikenal sebagai coffee shop kecil yang nyaman dengan suasana santai dan bersih. Lokasinya yang berada di sekitar area kampus membuat tempat ini sering dijadikan pilihan untuk nongkrong ringan atau sekadar menikmati kopi di sela aktivitas. Meski ukurannya tidak terlalu besar, tempat ini memiliki spot foto yang cukup menarik dan suasana yang tenang.\n\nDari sisi menu, Cetroo Coffee menawarkan pilihan kopi dan minuman yang dinilai enak dengan harga yang relatif terjangkau. Beberapa pengunjung menyebut kualitas kopi cukup memuaskan untuk ukuran coffee shop di area kampus, sehingga cocok bagi yang ingin ngopi santai tanpa harus mengeluarkan banyak biaya.\n\nUntuk fasilitas, tempat ini menyediakan area duduk yang mendukung aktivitas kerja ringan atau belajar. Parkiran dinilai cukup memadai, dan suasana yang tidak terlalu ramai menjadi nilai tambah bagi pengunjung yang mencari tempat ngopi yang simpel dan tidak ribut. Secara keseluruhan, Cetroo Coffee Rajawali sering direkomendasikan sebagai tempat nongkrong sederhana dengan ambience yang nyaman."
+}
+,
+{
+  "id": 7,
+  "name": "Kopi Siloka 4",
+  "slug": "kopi-siloka-4",
+  "address": "Jl. Mayor Ruslan No.23, 20 Ilir D. I, Kec. Ilir Timur I, Kota Palembang, Sumatera Selatan 30126",
+  "maps": "https://maps.app.goo.gl/3zar9GKKdKxqERrd8",
+  "coordinates": {
+    "lat": -2.973722,
+    "lng": 104.7566323
+  },
+  "open_hours": "Senin–Minggu: 10.00–20.00",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/kopiloka_sumsel/",
+  "rating": 4.8,
+  "vibe": [
+    "santai",
+    "kasual",
+    "coffee to-go",
+    "diskusi ringan",
+    "sederhana"
+  ],
+  "description": "Kopi Siloka 4 dikenal sebagai kedai kopi berkonsep sederhana yang fokus pada kualitas minuman. Berdasarkan ulasan pengunjung, tempat ini sering dijadikan pilihan aman untuk ngopi cepat maupun nongkrong singkat, dengan suasana yang santai dan tidak terlalu ramai. Beberapa pengunjung juga menyebut tempat ini cukup nyaman untuk diskusi ringan.\n\nDari sisi menu, kopi menjadi andalan utama dengan pilihan minuman yang dinilai enak dan konsisten. Tersedia juga menu manual brew meskipun pilihannya tidak terlalu banyak, serta beberapa minuman non-kopi seperti jus. Secara umum, kualitas rasa dianggap sebanding dengan harga yang terjangkau, menjadikannya pilihan praktis untuk coffee to-go.\n\nUntuk fasilitas, Kopi Siloka 4 menyediakan area duduk terbatas di bagian depan toko yang cukup untuk singgah sebentar. Pelayanan sering disebut ramah dan responsif, meskipun beberapa ulasan menyarankan penambahan variasi menu makanan agar pengunjung bisa berlama-lama. Tempat ini cocok bagi yang mencari kopi enak dengan konsep simpel dan efisien."
+},
+{
+  "id": 8,
+  "name": "Point Coffee Jendsu 4",
+  "slug": "point-coffee-jendsu-4",
+  "address": "Jl. Jend. Sudirman, 20 Ilir D. III, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30121",
+  "maps": "https://maps.app.goo.gl/S4swknXqrFdsyokk8",
+  "coordinates": {
+    "lat": -2.9680802,
+    "lng": 104.7492916
+  },
+  "open_hours": "Senin–Minggu: 24 Jam",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/pointcoffeeid/",
+  "rating": 4.3,
+  "vibe": [
+    "cepat",
+    "kasual",
+    "coffee to-go",
+    "ramai",
+    "transit"
+  ],
+  "description": "Point Coffee Jendsu 4 dikenal sebagai kedai kopi dengan konsep praktis yang menyatu dengan minimarket, sehingga mudah dijangkau dan cocok untuk singgah cepat kapan saja. Lokasinya yang berada di jalan utama membuat tempat ini sering ramai, terutama oleh pengunjung yang ingin istirahat sejenak atau membeli kopi saat perjalanan.\n\nDari sisi menu, Point Coffee menawarkan berbagai varian minuman kopi dan non-kopi dengan harga yang relatif terjangkau. Beberapa menu seperti kopi gula aren dan promo buy one get one cukup sering disebut pengunjung. Rasa minuman dinilai konsisten dan sesuai dengan standar jaringan Point Coffee.\n\nUntuk fasilitas dan pelayanan, area duduk tersedia namun terbatas dan sering menjadi catatan dalam ulasan, terutama terkait kenyamanan duduk serta pengelolaan parkir. Meski demikian, keberadaan layanan 24 jam dan pilihan take away membuat Point Coffee Jendsu 4 tetap menjadi pilihan praktis bagi pengunjung yang membutuhkan kopi cepat di area pusat kota."
+},
+{
+  "id": 9,
+  "name": "KYLO Coffee and Eatery",
+  "slug": "kylo-coffee-and-eatery",
+  "address": "Jl. Jend. Sudirman No.3105, 20 Ilir D. III, Kec. Ilir Timur I, Kota Palembang, Sumatera Selatan 30129",
+  "maps": "https://maps.app.goo.gl/QZzrRxHbfh3ZRrVQ8",
+  "coordinates": {
+    "lat": -2.9663038,
+    "lng": 104.7474255
+  },
+  "open_hours": "Senin–Minggu: 08.00–23.00",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/kylocoffee/",
+  "rating": 5,
+  "vibe": [
+    "santai",
+    "cozy",
+    "pelajar friendly",
+    "nongkrong",
+    "introvert friendly",
+    "hidden gem"
+  ],
+  "description": "KYLO Coffee and Eatery dikenal sebagai kafe berkonsep minimalis yang nyaman dan bersahabat, terutama bagi pelajar dan mahasiswa. Banyak pengunjung menyebut suasananya tenang, cozy, dan cocok untuk nongkrong santai maupun mengerjakan tugas. Lokasinya yang berada di pinggir jalan utama membuat tempat ini mudah diakses, namun tetap terasa cukup privat.\n\nDari sisi menu, KYLO menawarkan beragam pilihan kopi dan non-kopi dengan harga yang terjangkau. Rasa minuman dan makanan dinilai konsisten dan memuaskan, dengan beberapa menu favorit seperti nasi goreng, matcha, serta minuman botol yang praktis untuk dibawa bepergian. Banyak ulasan menilai kualitas rasa yang didapat terasa lebih tinggi dibandingkan harganya.\n\nUntuk fasilitas dan pelayanan, barista dan staf sering disebut ramah dan komunikatif. Tempat ini juga kerap menjadi pilihan untuk berkumpul bersama teman atau keluarga kecil, dengan suasana yang tidak bising dan nyaman untuk berlama-lama. Secara keseluruhan, KYLO Coffee and Eatery dianggap sebagai hidden gem di pusat kota Palembang dengan nilai yang sangat worth it."
+}
+,
+{
+  "id": 10,
+  "name": "Kopi Lawas",
+  "slug": "kopi-lawas",
+  "address": "Jl. Dwikora I No.1908, Sungai Pangeran, Kota Palembang",
+  "maps": "https://maps.app.goo.gl/cFTWk5P2d9wz4pJm6",
+  "coordinates": { "lat": -2.974886, "lng": 104.746409 },
+  "open_hours": "Senin–Minggu: 10.00–23.00 WIB",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/kopilawas.plg/",
+  "rating": 4.7,
+  "vibe": ["vintage", "santai", "lawas", "anak skena", "cozy", "nongkrong lama"],
+  "description": "Kopi Lawas dikenal sebagai kedai kopi independen dengan nuansa vintage yang kuat dan suasana santai yang membuat pengunjung betah berlama-lama. Banyak ulasan menyebut tempat ini sebagai ruang aman untuk ngobrol, bercerita, atau sekadar melepas penat, dengan ambience yang tenang dan terasa seperti “rumah sendiri”.\n\nDari sisi menu, Kopi Lawas menawarkan beragam pilihan kopi dan non-kopi dengan harga yang terjangkau. Beberapa menu khas seperti kopi susu lawas dengan sentuhan rempah sering disebut memiliki rasa unik dan berbeda. Kualitas minuman dinilai konsisten, cocok untuk pengunjung yang ingin menikmati kopi tanpa terburu-buru.\n\nUntuk fasilitas, tersedia area indoor dan outdoor dengan tempat duduk yang cukup luas serta parkiran yang memadai untuk motor maupun mobil. Tempat ini kerap dijadikan pilihan untuk nongkrong anak skena, mengerjakan tugas, atau diskusi santai. Secara keseluruhan, Kopi Lawas dianggap sebagai salah satu spot ngopi paling nyaman dengan karakter kuat di Palembang."
+},
+{
+  "id": 11,
+  "name": "Hanasta Coffee",
+  "slug": "hanasta-coffee",
+  "address": "Jl. Sumpah Pemuda No.08, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan 30137",
+  "maps": "https://maps.app.goo.gl/9QFGTcdrh6QFVG5h7",
+  "coordinates": { "lat": -2.9755737, "lng": 104.7372552 },
+  "open_hours": "Setiap hari: 08.00 – 01.00",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/hanasta.coffe/",
+  "rating": 4.5,
+  "vibe": ["urban", "cozy", "modern", "nongkrong malam", "kerja", "dating"],
+  "description": "Hanasta Coffee dikenal sebagai kedai kopi dengan vibes kota yang modern dan nyaman, cocok untuk nongkrong santai hingga larut malam. Area indoor sering direkomendasikan untuk nugas, meeting ringan, atau dating, sementara area outdoor jadi pilihan bagi pengunjung yang ingin merokok atau sekadar menikmati suasana jalanan.\n\nDari segi menu, kopi dan minuman non-kopi dinilai memiliki rasa yang enak dengan harga yang masih terjangkau. Beberapa pengunjung menyoroti pelayanan yang ramah dan responsif, bahkan dalam situasi tak terduga, staf dinilai sigap dan profesional. Meski begitu, sebagian ulasan mencatat bahwa porsi makanan tertentu terasa kurang sebanding dengan harga.\n\nUntuk fasilitas, Hanasta Coffee menyediakan tempat duduk yang cukup beragam, meski pada jam ramai layout bisa terasa agak padat. Jam buka hingga dini hari menjadi nilai tambah bagi pengunjung yang ingin nongkrong lama atau mencari tempat kerja malam. Secara keseluruhan, Hanasta Coffee dianggap sebagai salah satu spot ngopi nyaman dengan konsep urban di Palembang."
+},
+{
+  "id": 12,
+  "name": "Tomoro Coffee - SPBU M. Isa",
+  "slug": "tomoro-coffee-spbu-m-isa",
+  "address": "Jl. Dr. M. Isa No.16, Duku, Kec. Ilir Timur III, Kota Palembang, Sumatera Selatan",
+  "maps": "https://maps.app.goo.gl/HbtEFnw9nH7skJ4DA",
+  "coordinates": { "lat": -2.969969, "lng": 104.7692564 },
+  "open_hours": "Setiap hari",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/tomorocoffee.id/",
+  "rating": 4.7,
+  "vibe": ["modern", "cozy", "santai", "wfc friendly", "nongkrong cepat"],
+  "description": "Tomoro Coffee cabang SPBU M. Isa dikenal sebagai kedai kopi dengan konsep modern dan praktis, cocok untuk singgah cepat maupun duduk santai. Lokasinya yang berada di area SPBU membuat tempat ini mudah diakses, sementara suasananya tetap terasa nyaman untuk ngopi atau sekadar rehat dari aktivitas.\n\nDari segi menu, kopi susu aren, latte, dan varian signature Tomoro menjadi pilihan yang paling sering direkomendasikan. Rasa kopi dinilai konsisten dan kuat, dengan harga yang masih terjangkau. Promo dan voucher aplikasi juga kerap menjadi daya tarik bagi pelanggan setia.\n\nUntuk fasilitas dan layanan, tempat ini dinilai bersih dan cukup luas, cocok untuk nugas atau work from cafe ringan. Meski demikian, beberapa ulasan mencatat pengalaman pelayanan yang kurang konsisten di jam tertentu. Secara keseluruhan, Tomoro Coffee SPBU M. Isa tetap dianggap sebagai salah satu opsi ngopi praktis dan nyaman di Palembang."
+},
+{
+  "id": 13,
+  "name": "nay’s coffe",
+  "slug": "nays-coffe",
+  "address": "Jl. Jend. Sudirman, Sungai Pangeran, Kec. Ilir Timur I, Kota Palembang, Sumatera Selatan",
+  "maps": "https://maps.app.goo.gl/NVYWvGZsHq7tz4M66",
+  "coordinates": { "lat": -2.9791746, "lng": 104.754876 },
+  "open_hours": "Senin–Jumat: 20.00–02.00 | Sabtu: 19.00–04.00 | Minggu: 20.00–02.00",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/_nayscoffee.id/",
+  "rating": 6,
+  "vibe": ["night coffee", "santai", "street vibes", "cozy", "nongkrong malam"],
+  "description": "nay’s coffe merupakan kedai kopi malam dengan suasana santai dan vibe jalanan yang kuat. Tempat ini cocok untuk ngopi sambil menikmati lalu lintas malam Palembang, dengan konsep sederhana namun tetap nyaman.\n\nMenu kopinya dinilai konsisten dan tidak membosankan, dengan harga yang sangat ramah di kantong. Pelayanan barista juga sering dipuji ramah, sopan, dan komunikatif, membuat pengalaman ngopi terasa lebih personal.\n\nDengan jam operasional hingga dini hari, nay’s coffe jadi pilihan pas untuk nongkrong malam, ngopi santai, atau rehat setelah aktivitas panjang, terutama buat yang cari kopi enak tanpa ribet."
+},
+{
+  "id": 14,
+  "name": "Kopi Djati",
+  "slug": "kopi-djati",
+  "address": "Depan Waroeng SPBU, Jl. Radial, 24 Ilir, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan 30134",
+  "maps": "https://maps.app.goo.gl/8eKx4qk3ZyXQJX4W9",
+  "coordinates": { "lat": -2.983712, "lng": 104.7504741 },
+  "open_hours": "24 Jam (Kamis tertentu: 16.00–00.00)",
+  "price_range": "Rp25.000 – Rp50.000",
+  "instagram": "https://www.instagram.com/kopidjati.id/",
+  "rating": 4.9,
+  "vibe": ["santai", "nongkrong bebas", "coffee 24 jam", "anak kampus"],
+  "description": "Kopi Djati dikenal sebagai kedai kopi santai dengan harga bersahabat, cocok untuk mahasiswa, pekerja malam, maupun yang sekadar ingin nongkrong tanpa batas waktu. Banyak ulasan menyoroti kopinya yang enak dengan harga ramah di kantong.\n\nSuasananya nyaman untuk kumpul bareng teman, ngobrol lama, atau sekadar ngopi santai di tengah kota. Dengan jam operasional 24 jam, Kopi Djati jadi pilihan aman kapan pun butuh kopi dan tempat duduk.\n\nPelayanan ramah dan konsep sederhana membuat Kopi Djati tetap relevan sebagai tempat nongkrong lokal yang konsisten."
+}
+
 ]
