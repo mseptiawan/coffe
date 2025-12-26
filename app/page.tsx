@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import cafes from "@/data/cafes.json";
 import CafeCard from "@/components/CafeCard";
+import { AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import ServiceCTA from "@/components/ServiceCTA";
 import SearchBar from "@/components/SearchBar";
@@ -40,15 +41,14 @@ export default function Home() {
   const currentCafes = filteredCafes.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredCafes.length / itemsPerPage);
 
-  // Ubah fungsi paginate menjadi:
+  // Ganti fungsi paginate kamu jadi begini:
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    // ✅ Tambahkan pengecekan typeof window
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 800, behavior: "smooth" });
+    const element = document.getElementById("rekomendasi-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <main className="mx-auto max-w-6xl px-4 md:px-6 py-12 space-y-6">
       {/* HEADER */}
@@ -90,7 +90,12 @@ export default function Home() {
       {/* LIST */}
       <div className="space-y-6">
         <div className="flex items-center justify-between px-1">
-          <h3 className="text-2xl font-bold text-white">Rekomendasi Cafe</h3>
+          <h3
+            id="rekomendasi-section"
+            className="text-2xl font-bold text-white"
+          >
+            Rekomendasi Cafe
+          </h3>
 
           <span className="text-sm text-zinc-500 font-medium">
             Menampilkan {filteredCafes.length === 0 ? 0 : indexOfFirstItem + 1}-
@@ -100,9 +105,14 @@ export default function Home() {
         </div>
 
         <section className="grid grid-cols-2 gap-3 md:gap-8 lg:grid-cols-3">
-          {currentCafes.map((cafe) => (
-            <CafeCard key={cafe.id} cafe={cafe} />
-          ))}
+          {/* 💡 Bungkus dengan AnimatePresence */}
+          <AnimatePresence mode="wait">
+            {" "}
+            {/* mode="wait" penting agar card tidak tumpang tindih */}
+            {currentCafes.map((cafe) => (
+              <CafeCard key={cafe.id} cafe={cafe} />
+            ))}
+          </AnimatePresence>
         </section>
 
         {/* EMPTY STATE */}

@@ -10,15 +10,19 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   /* Tambahkan efek gradasi gelap agar tidak flat */
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(24, 30%, 15%, 1) 0, transparent 50%),
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(24, 30%, 15%, 1) 0,
+      transparent 50%
+    ),
     radial-gradient(at 100% 100%, hsla(20, 20%, 10%, 1) 0, transparent 50%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
 }
 /* Card glassmorphism halus */
 .cafe-card-shadow {
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.05);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05),
+    0 12px 24px rgba(0, 0, 0, 0.05);
 }
 /* Custom styling untuk Leaflet Popup agar sesuai font Jakarta Sans */
 .leaflet-popup-content-wrapper {
@@ -29,4 +33,8 @@ body {
 
 .leaflet-container {
   font-family: inherit !important;
+}
+/* Tambahkan ini di style jsx global */
+.leaflet-tile-container {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
 }
