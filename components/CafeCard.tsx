@@ -63,7 +63,6 @@ export default function CafeCard({ cafe }: { cafe: Cafe }) {
           </div>
           {cafe.vibe.length > 3 && (
             <span className="text-[9px] md:text-[10px] text-zinc-500 font-medium self-center">
-              {/* ✅ Gunakan cara aman: Default ke desktop (3), jangan panggil window langsung */}
               +{cafe.vibe.length - 3}
             </span>
           )}
