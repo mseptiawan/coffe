@@ -23,7 +23,7 @@ export default function CafeCard({ cafe }: { cafe: Cafe }) {
           <h2 className="text-sm md:text-xl font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors line-clamp-2 min-h-[2.5rem] md:min-h-0">
             {cafe.name}
           </h2>
-          
+
           <div className="flex w-fit items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 md:py-1 text-[10px] md:text-sm font-bold text-amber-500 border border-amber-500/20">
             <Star size={10} className="md:w-3.5" fill="currentColor" />
             {cafe.rating.toFixed(1)}
@@ -43,21 +43,28 @@ export default function CafeCard({ cafe }: { cafe: Cafe }) {
           {/* Di mobile cuma muncul 1, di desktop muncul 3 */}
           <div className="flex md:hidden">
             {cafe.vibe.slice(0, 1).map((v) => (
-              <span key={v} className="rounded-md bg-zinc-800/50 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-700/50">
+              <span
+                key={v}
+                className="rounded-md bg-zinc-800/50 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-700/50"
+              >
                 {v}
               </span>
             ))}
           </div>
           <div className="hidden md:flex flex-wrap gap-2">
             {cafe.vibe.slice(0, 3).map((v) => (
-              <span key={v} className="rounded-md bg-zinc-800/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-700/50 group-hover:border-amber-500/30 group-hover:text-amber-200 transition-colors">
+              <span
+                key={v}
+                className="rounded-md bg-zinc-800/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-400 border border-zinc-700/50 group-hover:border-amber-500/30 group-hover:text-amber-200 transition-colors"
+              >
                 {v}
               </span>
             ))}
           </div>
           {cafe.vibe.length > 3 && (
             <span className="text-[9px] md:text-[10px] text-zinc-500 font-medium self-center">
-              +{cafe.vibe.length - (typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3)}
+              {/* ✅ Gunakan cara aman: Default ke desktop (3), jangan panggil window langsung */}
+              +{cafe.vibe.length - 3}
             </span>
           )}
         </div>
@@ -66,15 +73,20 @@ export default function CafeCard({ cafe }: { cafe: Cafe }) {
       {/* Footer: Area Aksi */}
       <div className="mt-4 md:mt-8 pt-3 md:pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
         <div className="flex items-center gap-1 md:gap-2 text-zinc-500 group-hover:text-amber-400/80 transition-colors">
-            <Coffee size={12} className="md:w-4" />
-            <span className="text-[8px] md:text-[11px] font-bold uppercase tracking-widest truncate max-w-[50px] md:max-w-none">Cafe</span>
+          <Coffee size={12} className="md:w-4" />
+          <span className="text-[8px] md:text-[11px] font-bold uppercase tracking-widest truncate max-w-[50px] md:max-w-none">
+            Cafe
+          </span>
         </div>
-        
+
         <div className="flex items-center text-[10px] md:text-sm font-bold text-zinc-400 group-hover:text-amber-400 transition-all">
           <span className="hidden md:inline opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
             Lihat detail
           </span>
-          <ArrowRight size={14} className="ml-1 md:w-[18px] transition-transform duration-300 group-hover:translate-x-1" />
+          <ArrowRight
+            size={14}
+            className="ml-1 md:w-[18px] transition-transform duration-300 group-hover:translate-x-1"
+          />
         </div>
       </div>
 

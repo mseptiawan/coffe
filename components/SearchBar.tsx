@@ -11,6 +11,7 @@ export default function SearchBar({ value, onChange }: Props) {
 
   // LOGIC SHORTCUT CTRL+K / CMD+K
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
@@ -26,7 +27,7 @@ export default function SearchBar({ value, onChange }: Props) {
     <div className="relative group w-full max-w-2xl mx-auto">
       {/* Glow effect */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl opacity-0 blur group-focus-within:opacity-20 transition duration-500"></div>
-      
+
       <div className="relative flex items-center">
         <div className="absolute left-4 z-10 text-zinc-500 group-focus-within:text-amber-500 transition-colors">
           <Search size={20} strokeWidth={2.5} />

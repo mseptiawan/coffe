@@ -35,15 +35,16 @@ export default function Home() {
   // PAGINATION LOGIC (PAKAI filteredCafes)
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCafes = filteredCafes.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  const currentCafes = filteredCafes.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredCafes.length / itemsPerPage);
 
+  // Ubah fungsi paginate menjadi:
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 800, behavior: "smooth" });
+    // ✅ Tambahkan pengecekan typeof window
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 800, behavior: "smooth" });
+    }
   };
 
   return (
@@ -87,16 +88,10 @@ export default function Home() {
       {/* LIST */}
       <div className="space-y-6">
         <div className="flex items-center justify-between px-1">
-          <h3 className="text-2xl font-bold text-white">
-            Rekomendasi Cafe
-          </h3>
+          <h3 className="text-2xl font-bold text-white">Rekomendasi Cafe</h3>
 
           <span className="text-sm text-zinc-500 font-medium">
-            Menampilkan{" "}
-            {filteredCafes.length === 0
-              ? 0
-              : indexOfFirstItem + 1}
-            -
+            Menampilkan {filteredCafes.length === 0 ? 0 : indexOfFirstItem + 1}-
             {Math.min(indexOfLastItem, filteredCafes.length)} dari{" "}
             {filteredCafes.length} cafe
           </span>
