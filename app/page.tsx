@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import cafes from "@/data/cafes.json";
 import CafeCard from "@/components/CafeCard";
-import CafeMap from "@/components/CafeMap";
+import dynamic from "next/dynamic";
 import ServiceCTA from "@/components/ServiceCTA";
 import SearchBar from "@/components/SearchBar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -11,7 +11,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Home() {
   // SEARCH
   const [query, setQuery] = useState("");
-
+  const CafeMap = dynamic(() => import("@/components/CafeMap"), {
+    ssr: false,
+  });
   // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;

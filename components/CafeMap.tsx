@@ -2,19 +2,30 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Link from "next/link";
-import LeafletConfig from "./LeafletConfig";
-import L from "leaflet"; // Import Leaflet untuk icon custom
+import { useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
-
-// Definisi Icon Kopi Custom
-const coffeeIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/924/924514.png", // Icon kopi estetik
-  iconSize: [35, 35], // Ukuran icon
-  iconAnchor: [17, 35], // Titik tumpu icon (tengah bawah)
-  popupAnchor: [0, -35], // Posisi popup relatif terhadap icon
-});
+import LeafletConfig from "./LeafletConfig";
 
 export default function CafeMap({ cafes }: { cafes: any[] }) {
+  const [coffeeIcon, setCoffeeIcon] = useState<any>(null);
+
+  useEffect(() => {
+    // ⬇️ IMPORT LEAFLET HANYA DI BROWSER
+    import("leaflet").then((L) => {
+      const icon = new L.Icon({
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/924/924514.png",
+        iconSize: [35, 35],
+        iconAnchor: [17, 35],
+        popupAnchor: [0, -35],
+      });
+
+      setCoffeeIcon(icon);
+    });
+  }, []);
+
+  // ⛔ Jangan render map sebelum icon siap
+  if (!coffeeIcon) return null;
+
   return (
     <div className="h-[450px] w-full overflow-hidden rounded-3xl border-4 border-white shadow-lg">
       <LeafletConfig />
@@ -34,14 +45,16 @@ export default function CafeMap({ cafes }: { cafes: any[] }) {
           <Marker
             key={cafe.id}
             position={[cafe.coordinates.lat, cafe.coordinates.lng]}
-            icon={coffeeIcon} // <--- GUNAKAN ICON DI SINI
+            icon={coffeeIcon}
           >
             <Popup className="custom-popup">
               <div className="p-1 space-y-2">
                 <h4 className="font-bold text-gray-900">{cafe.name}</h4>
+
                 <div className="flex items-center text-amber-600 font-bold text-xs">
                   ⭐ {cafe.rating}
                 </div>
+
                 <Link
                   href={`/cafe/${cafe.slug}`}
                   className="block text-center bg-gray-900 text-white text-[10px] py-1.5 px-3 rounded-lg hover:bg-amber-600 transition"
