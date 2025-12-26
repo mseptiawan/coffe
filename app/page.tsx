@@ -3,26 +3,27 @@
 import { useState, useEffect } from "react";
 import cafes from "@/data/cafes.json";
 import CafeCard from "@/components/CafeCard";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import ServiceCTA from "@/components/ServiceCTA";
 import SearchBar from "@/components/SearchBar";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export default function Home() {
-  // SEARCH
+  // SEARCH STATE
   const [query, setQuery] = useState("");
+
+  // LOAD MORE STATE
+  const initialItems = 9;
+  const [limit, setLimit] = useState(initialItems);
+
   const CafeMap = dynamic(() => import("@/components/CafeMap"), {
     ssr: false,
   });
-  // PAGINATION
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
 
   // FILTER LOGIC
   const filteredCafes = cafes.filter((cafe) => {
     const q = query.toLowerCase();
-
     return (
       cafe.name.toLowerCase().includes(q) ||
       cafe.address.toLowerCase().includes(q) ||
@@ -30,133 +31,149 @@ export default function Home() {
     );
   });
 
-  // RESET PAGE SAAT SEARCH
+  // RESET LIMIT SAAT SEARCH BERUBAH
   useEffect(() => {
-    setCurrentPage(1);
+    setLimit(initialItems);
   }, [query]);
 
-  // PAGINATION LOGIC (PAKAI filteredCafes)
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCafes = filteredCafes.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(filteredCafes.length / itemsPerPage);
+  // DATA YANG DITAMPILKAN (Bukan di-page, tapi di-slice sampai limit)
+  const currentCafes = filteredCafes.slice(0, limit);
 
-  // Ganti fungsi paginate kamu jadi begini:
-  const paginate = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-    const element = document.getElementById("rekomendasi-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  // FUNGSI LOAD MORE
+  const handleLoadMore = () => {
+    setLimit((prev) => prev + 6); // Tambah 6 cafe setiap kali klik
   };
+
   return (
     <main className="mx-auto max-w-6xl px-4 md:px-6 py-12 space-y-6">
       {/* HEADER */}
-      <header className="text-center md:text-left space-y-3">
-        <div className="inline-block rounded-full bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-500 border border-amber-500/20">
-          ☕ Coffee Directory
+      {/* Container Header dibuat Center secara keseluruhan */}
+      <header className="flex flex-col items-center text-center space-y-6 md:space-y-8">
+        {/* 1. BADGE - Center */}
+        <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-amber-500 border border-amber-500/20">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+          </span>
+          Coffee & Space Directory
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white">
-          Palembang <span className="text-amber-500">Coffee Map</span>
-        </h1>
+        {/* 2. TITLE & DESCRIPTION - Center */}
+        <div className="space-y-3 md:space-y-4 max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-[1.1]">
+            Palembang <span className="text-amber-500 italic">Coffee Map.</span>
+          </h1>
+          <p className="mx-auto text-sm md:text-lg text-zinc-400 max-w-xl md:max-w-2xl leading-relaxed font-medium">
+            Temukan tempat ngopi dan{" "}
+            <span className="text-zinc-200">hangout spots</span> terbaik di Kota
+            Pempek. Mulai dari{" "}
+            <span className="text-zinc-200">specialty coffee</span> hingga spot
+            santai dengan menu makanan juara.
+          </p>
+        </div>
 
-        <p className="text-lg text-zinc-400 max-w-2xl">
-          Temukan tempat ngopi terbaik di Kota Pempek. Mulai dari yang hidden
-          gem sampai yang paling hits untuk work from cafe.
-        </p>
+        {/* 3. SEARCH BAR - Sekarang di Tengah */}
+        <div className="w-full max-w-2xl mx-auto pt-2 md:pt-4">
+          <SearchBar value={query} onChange={setQuery} />
 
-        {/* SEARCH BAR */}
-        <SearchBar value={query} onChange={setQuery} />
+          {/* Hint kecil di bawah search bar biar makin cakep */}
+          <p className="mt-3 text-[10px] md:text-xs text-zinc-500 font-medium">
+            Coba cari:{" "}
+            <span className="text-zinc-400 italic">
+              "Kambang Iwak", "WFC", atau "Cozy"
+            </span>
+          </p>
+        </div>
       </header>
 
-      {/* MAP */}
+      {/* MAP SECTION */}
       <section className="overflow-hidden rounded-3xl border-4 border-zinc-800 shadow-2xl">
         <CafeMap cafes={filteredCafes} />
       </section>
 
       {/* MAP INFO */}
-      <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-white/70">
-        <span>📍 {filteredCafes.length} cafe ditemukan</span>
-        <span>☕ Hidden gem & hits</span>
-        <span>💻 WFC friendly</span>
+      <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-white/70 font-medium">
+        <span className="flex items-center gap-1.5">
+          <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+          {filteredCafes.length} Cafe ditemukan
+        </span>
+        <span className="text-zinc-600">|</span>
+        <span>☕ Hidden Gem & Hits</span>
+        <span className="text-zinc-600">|</span>
+        <span>💻 WFC Friendly</span>
       </div>
 
-      {/* CTA */}
+      {/* CTA SECTION */}
       <div className="-mt-6">
         <ServiceCTA />
       </div>
 
-      {/* LIST */}
-      <div className="space-y-6">
+      {/* LIST SECTION */}
+      <div className="space-y-8 pt-6">
         <div className="flex items-center justify-between px-1">
           <h3
             id="rekomendasi-section"
-            className="text-2xl font-bold text-white"
+            className="text-2xl font-bold text-white tracking-tight"
           >
             Rekomendasi Cafe
           </h3>
 
-          <span className="text-sm text-zinc-500 font-medium">
-            Menampilkan {filteredCafes.length === 0 ? 0 : indexOfFirstItem + 1}-
-            {Math.min(indexOfLastItem, filteredCafes.length)} dari{" "}
-            {filteredCafes.length} cafe
+          <span className="text-xs md:text-sm text-zinc-500 font-medium  px-3 py-1 ">
+            Menampilkan {currentCafes.length} dari {filteredCafes.length}
           </span>
         </div>
 
+        {/* GRID WITH FRAMER MOTION */}
         <section className="grid grid-cols-2 gap-3 md:gap-8 lg:grid-cols-3">
-          {/* 💡 Bungkus dengan AnimatePresence */}
-          <AnimatePresence mode="wait">
-            {" "}
-            {/* mode="wait" penting agar card tidak tumpang tindih */}
-            {currentCafes.map((cafe) => (
-              <CafeCard key={cafe.id} cafe={cafe} />
-            ))}
-          </AnimatePresence>
+          {currentCafes.map((cafe) => (
+            <div key={cafe.id} className="animate-fade-in-up">
+              <CafeCard cafe={cafe} />
+            </div>
+          ))}
         </section>
 
         {/* EMPTY STATE */}
         {filteredCafes.length === 0 && (
-          <p className="text-center text-zinc-500 py-12">
-            Tidak ada cafe yang cocok dengan pencarian kamu ☕
-          </p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center text-zinc-500 py-20 border-2 border-dashed border-white/5 rounded-3xl"
+          >
+            <p className="text-lg">
+              Tidak ada cafe yang cocok dengan pencarian kamu ☕
+            </p>
+            <button
+              onClick={() => setQuery("")}
+              className="mt-4 text-amber-500 hover:underline font-bold"
+            >
+              Reset Pencarian
+            </button>
+          </motion.div>
         )}
 
-        {/* PAGINATION */}
-        {totalPages > 1 && (
-          <div className="mt-12 flex items-center justify-center gap-2 pt-8 border-t border-white/5">
+        {/* LOAD MORE BUTTON */}
+        {limit < filteredCafes.length && (
+          <div className="mt-12 flex items-center justify-center pt-8 border-t border-white/5">
             <button
-              onClick={() => paginate(currentPage - 1)}
-              disabled={currentPage === 1}
-              className="p-2 rounded-xl bg-zinc-900 border border-white/5 text-zinc-400 disabled:opacity-20 hover:bg-zinc-800"
+              onClick={handleLoadMore}
+              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-3 transition-all hover:border-amber-500/50 hover:bg-amber-500/5 active:scale-95"
             >
-              <ChevronLeft size={24} />
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-              (number) => (
-                <button
-                  key={number}
-                  onClick={() => paginate(number)}
-                  className={`h-10 w-10 rounded-xl font-bold ${
-                    currentPage === number
-                      ? "bg-amber-500 text-black"
-                      : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800"
-                  }`}
-                >
-                  {number}
-                </button>
-              )
-            )}
-
-            <button
-              onClick={() => paginate(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className="p-2 rounded-xl bg-zinc-900 border border-white/5 text-zinc-400 disabled:opacity-20 hover:bg-zinc-800"
-            >
-              <ChevronRight size={24} />
+              <Plus
+                size={16}
+                className="text-amber-500 transition-transform group-hover:rotate-90 duration-300"
+              />
+              <span className="text-xs font-bold uppercase tracking-widest text-zinc-300 group-hover:text-white">
+                Muat Lebih Banyak
+              </span>
             </button>
           </div>
+        )}
+
+        {/* INFO JIKA SUDAH SEMUA TERLIHAT */}
+        {limit >= filteredCafes.length && filteredCafes.length > 0 && (
+          <p className="text-center text-zinc-600 text-xs font-bold uppercase tracking-[0.2em] pt-10">
+            Kamu telah menjelajahi semua tempat ngopi ☕
+          </p>
         )}
       </div>
     </main>
