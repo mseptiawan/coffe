@@ -80,7 +80,7 @@ export default function Home() {
           <p className="mt-3 text-[10px] md:text-xs text-zinc-500 font-medium">
             Coba cari:{" "}
             <span className="text-zinc-400 italic">
-              "Kambang Iwak", "WFC", atau "Cozy"
+              &quot;Kambang Iwak&quot;, &quot;WFC&quot;, atau &quot;Cozy&quot;
             </span>
           </p>
         </div>

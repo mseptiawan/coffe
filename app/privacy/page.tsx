@@ -52,9 +52,9 @@ export default function PrivacyPage() {
               membantu visualisasi bagi pengguna.
             </p>
             <div className="bg-zinc-900/50 border border-white/5 p-6 rounded-2xl italic">
-              "Jika Anda adalah pemilik bisnis dan ingin informasi atau foto
-              Anda dihapus/diperbarui, kami akan melakukannya dengan segera
-              setelah menerima laporan Anda."
+              Jika Anda adalah pemilik bisnis dan ingin informasi atau foto Anda
+              dihapus/diperbarui, kami akan melakukannya dengan segera setelah
+              menerima laporan Anda.
             </div>
           </div>
         </section>
