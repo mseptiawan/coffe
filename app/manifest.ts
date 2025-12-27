@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Palembang Coffee Map",
-    short_name: "PBG Coffee",
+    name: "Pemenang Karir Coffee Map", // Nama lengkap saat diinstal
+    short_name: "PK Coffee", // Nama di bawah ikon (singkat & padat)
     description: "Temukan hidden gem cafe terbaik di Kota Palembang",
     start_url: "/",
     display: "standalone",
