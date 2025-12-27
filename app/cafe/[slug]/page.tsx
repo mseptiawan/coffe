@@ -29,7 +29,9 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
   if (!cafe) return notFound();
 
   const handleOpenImage = (src: string) => setSelectedImage(src);
-
+  const mainImage = cafe.images?.gallery?.[0]
+    ? cafeImage(cafe.slug, `gallery/${cafe.images.gallery[0]}`, "gallery")
+    : null;
   return (
     <main className="min-h-screen bg-[#0A0A0A] text-zinc-100 pb-1">
       {/* 1. MODAL LIGHTBOX */}
@@ -44,9 +46,10 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
           <div className="relative w-full max-w-4xl h-[80vh]">
             <Image
               src={selectedImage}
-              alt="Fullscreen view"
+              alt={`Suasana di ${cafe.name}`} // Lebih deskriptif
               fill
               className="object-contain"
+              priority // Agar gambar modal langsung tajam saat terbuka
             />
           </div>
         </div>
@@ -90,55 +93,68 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
       {/* 3. HERO SECTION (Tinggi Desktop +20px & Mobile Safe) */}
       <section className="relative w-full bg-[#0A0A0A]">
         <div className="mx-auto max-w-6xl px-0 md:px-6 md:pt-6">
-          <div className="relative aspect-[4/3] md:aspect-auto md:h-[540px] w-full overflow-hidden md:rounded-xl border-b md:border border-white/10 bg-zinc-900">
-            {/* LOGIKA GAMBAR / PLACEHOLDER */}
-            {cafe.images?.cover ? (
-              <Image
-                src={cafeImage(cafe.slug, "cover", "cover")}
-                alt={cafe.name}
-                fill
-                className="object-cover object-center"
-                priority
-                sizes="(max-width: 768px) 100vw, 1200px"
-              />
-            ) : (
-              /* Tampilan Premium saat gambar tidak ada */
-              <div className="relative flex h-full w-full items-center justify-center bg-zinc-950">
-                {/* Efek Cahaya Dekoratif di Background */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/10 blur-[120px] rounded-full" />
+          <div className="relative aspect-[4/3] md:aspect-auto md:h-[480px] w-full overflow-hidden md:rounded-[2rem] border-b md:border border-white/10 bg-zinc-950">
+            {/* BACKGROUND ILLUSTRATION (Ganti Image) */}
+            <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
+              {/* Efek Ambient Glow yang lebih dinamis */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/20 blur-[120px] rounded-full animate-pulse" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-indigo-600/10 blur-[100px] rounded-full" />
 
-                <div className="z-10 flex flex-col items-center gap-4 opacity-20">
-                  <Coffee size={80} strokeWidth={1} className="text-white" />
-                  <span className="text-xs font-black uppercase tracking-[0.2em] text-white">
-                    Image Not Available
+              {/* Ikon Kopi sebagai Centerpiece */}
+              <div className="relative z-10 flex flex-col items-center gap-6">
+                <div className="relative">
+                  {/* Dekorasi lingkaran di belakang ikon */}
+                  <div className="absolute inset-0 scale-150 border border-white/5 rounded-full" />
+                  <div className="absolute inset-0 scale-[2] border border-white/[0.02] rounded-full" />
+
+                  <Coffee
+                    size={120}
+                    strokeWidth={0.5}
+                    className="text-amber-500/40 drop-shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+                  />
+                </div>
+
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500">
+                    Palembang Coffee Map
                   </span>
+                  <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
                 </div>
               </div>
-            )}
 
-            {/* Overlay Gradient: Tetap ada agar teks judul selalu kontras */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              {/* Background Pattern (Optional: Bikin tekstur biar ga polos banget) */}
+              <div
+                className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                }}
+              />
+            </div>
+
+            {/* Overlay Gradient (Dibuat lebih gelap di bawah agar teks terbaca) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-20" />
 
             {/* Title & Info Over Image */}
-            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-12 z-20">
-              <div className="flex items-center gap-1.5 mb-2">
-                <Star size={14} className="fill-amber-500 text-amber-500" />
-                <span className="text-amber-500 font-bold text-sm">
-                  {/* Fix rating toFixed agar tidak error jika rating null */}
-                  {cafe.rating ? cafe.rating.toFixed(1) : "0.0"}
+            <div className="absolute bottom-8 left-6 right-6 md:bottom-12 md:left-12 z-30">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-1 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-full">
+                  <Star size={12} className="fill-amber-500 text-amber-500" />
+                  <span className="text-amber-500 font-black text-xs">
+                    {cafe.rating ? cafe.rating.toFixed(1) : "0.0"}
+                  </span>
+                </div>
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  Featured Destination
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-6xl font-black tracking-tighter uppercase italic text-white leading-[0.9] drop-shadow-2xl">
+              <h1 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic text-white leading-[0.85] drop-shadow-2xl">
                 {cafe.name}
               </h1>
 
-              <div className="flex items-start gap-2 text-zinc-300 mt-4 max-w-md md:max-w-xl">
-                <MapPin
-                  size={16}
-                  className="mt-0.5 shrink-0 text-amber-500 md:w-5 md:h-5"
-                />
-                <p className="text-xs md:text-base leading-relaxed drop-shadow-md line-clamp-2 font-medium">
+              <div className="flex items-start gap-2 text-zinc-300 mt-5 max-w-md md:max-w-xl">
+                <MapPin size={18} className="mt-0.5 shrink-0 text-amber-500" />
+                <p className="text-sm md:text-lg leading-relaxed font-medium text-zinc-400">
                   {cafe.address}
                 </p>
               </div>
@@ -229,7 +245,7 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
                       >
                         <Image
                           src={src}
-                          alt="Gallery"
+                          alt={`Interior dan suasana di ${cafe.name} Palembang`}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
@@ -262,7 +278,7 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
                     >
                       <Image
                         src={src}
-                        alt="Menu"
+                        alt={`Daftar menu makanan dan minuman di ${cafe.name}`}
                         fill
                         className="object-cover"
                       />
@@ -339,6 +355,36 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
           </div>
         </footer>
       </article>
+      {/* 1.5 JSON-LD Schema (SEO Robot) */}
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            name: cafe.name,
+            description: cafe.description?.replace(/\n/g, " "),
+            image: mainImage,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: cafe.address,
+              addressLocality: "Palembang",
+              addressRegion: "Sumatera Selatan",
+              addressCountry: "ID",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: cafe.rating || 0,
+              bestRating: "5",
+              worstRating: "1",
+              ratingCount: "1",
+            },
+            priceRange: cafe.price_range,
+            servesCuisine: "Coffee & Snack",
+          }),
+        }}
+      />
     </main>
   );
 }

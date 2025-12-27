@@ -14,7 +14,11 @@
     "instagram": "https://www.instagram.com/unfavoriteee/",
     "rating": 4.9,
     "vibe": ["santai", "kasual", "cozy", "nongkrong"],
-    "description": "Un.Favorite Coffee and Noodle dikenal sebagai tempat dengan suasana santai dan kasual yang membuat pengunjung nyaman untuk nongkrong. Banyak pengunjung merasa tempat ini cocok untuk berkumpul bersama teman atau sekadar melepas penat, dengan vibe yang tidak terlalu formal dan terasa ramah. Di waktu tertentu, suasana bisa terasa lebih hidup, terutama saat jam ramai.\n\nDari sisi menu, kombinasi kopi dan hidangan mie menjadi hal yang paling sering disebut oleh pengunjung. Rasa makanan dan minuman dinilai memuaskan dan cukup konsisten, dengan harga yang masih tergolong terjangkau. Tempat ini sering dianggap worth it untuk didatangi, baik untuk makan ringan maupun nongkrong lebih lama.\n\nFasilitas yang tersedia dinilai cukup menunjang kenyamanan, dengan area duduk yang membuat pengunjung betah berlama-lama. Meski begitu, pada jam makan atau akhir pekan tempat ini bisa terasa lebih ramai. Untuk pengalaman yang lebih nyaman, banyak pengunjung menyarankan datang di luar jam sibuk."
+    "description": "Un.Favorite Coffee and Noodle dikenal sebagai tempat dengan suasana santai dan kasual yang membuat pengunjung nyaman untuk nongkrong. Banyak pengunjung merasa tempat ini cocok untuk berkumpul bersama teman atau sekadar melepas penat, dengan vibe yang tidak terlalu formal dan terasa ramah. Di waktu tertentu, suasana bisa terasa lebih hidup, terutama saat jam ramai.\n\nDari sisi menu, kombinasi kopi dan hidangan mie menjadi hal yang paling sering disebut oleh pengunjung. Rasa makanan dan minuman dinilai memuaskan dan cukup konsisten, dengan harga yang masih tergolong terjangkau. Tempat ini sering dianggap worth it untuk didatangi, baik untuk makan ringan maupun nongkrong lebih lama.\n\nFasilitas yang tersedia dinilai cukup menunjang kenyamanan, dengan area duduk yang membuat pengunjung betah berlama-lama. Meski begitu, pada jam makan atau akhir pekan tempat ini bisa terasa lebih ramai. Untuk pengalaman yang lebih nyaman, banyak pengunjung menyarankan datang di luar jam sibuk.",
+    "images": {
+      "gallery": ["outdoor", "outdoor2", "outdoor3", "outdoor4"],
+      "menu": ["menu", "menu2"]
+    }
   },
   {
     "id": 2,
@@ -33,7 +37,6 @@
     "vibe": ["santai", "cozy", "kasual", "nongkrong", "wfc ringan"],
     "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Kopi Nostalgia 2 dikenal sebagai tempat nongkrong yang nyaman dengan suasana santai dan kasual. Tersedia area indoor dan outdoor, di mana area indoor sering dianggap lebih homey dan tenang, sementara area outdoor menjadi pilihan alternatif saat tempat sedang ramai. Banyak pengunjung merasa betah berlama-lama, terutama pada sore hingga malam hari.\n\nDari sisi menu, kopi dan makanan yang disajikan mendapatkan banyak respons positif. Beberapa menu seperti kopi, matcha latte, sate taichan, dan rice bowl cukup sering disebut oleh pengunjung. Rasa dan porsi dinilai sebanding dengan harga yang ditawarkan, sehingga tempat ini dianggap cukup worth it, meskipun ada beberapa catatan mengenai harga add-on tertentu yang terasa relatif lebih tinggi.\n\nUntuk fasilitas, Kopi Nostalgia 2 menyediakan WiFi, colokan listrik, musholla, serta toilet yang bersih dan lengkap, sehingga mendukung aktivitas nongkrong maupun kerja ringan. Meski demikian, beberapa pengunjung mencatat bahwa suasana bisa menjadi lebih ramai di jam-jam tertentu dan pelayanan terkadang terasa kurang konsisten, sehingga disarankan datang di luar jam sibuk bagi yang menginginkan suasana lebih tenang.",
     "images": {
-      "cover": true,
       "gallery": ["indoor", "indoor2", "outdoor", "outdoor2"],
       "menu": ["menu", "menu2", "menu3", "menu4"]
     }
@@ -60,7 +63,11 @@
       "coffee enthusiast",
       "wfc ringan"
     ],
-    "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Luthier Coffee dikenal sebagai specialty coffee shop dengan suasana yang cozy dan cukup estetis. Tempat ini sering disebut sebagai rumah bagi barista berprestasi tingkat nasional, sehingga memberikan kesan serius terhadap kualitas kopi yang disajikan. Suasananya cenderung santai namun tetap profesional, cocok untuk nongkrong, menikmati kopi dengan tenang, atau sekadar bersantai bersama teman.\n\nDari sisi menu, kopi menjadi daya tarik utama dengan pilihan espresso-based dan manual brew menggunakan berbagai biji kopi lokal maupun impor. Banyak pengunjung menilai kualitas kopi berada di level tinggi, dengan rasa yang konsisten dan berkarakter. Selain minuman, tersedia juga menu makanan dan dessert seperti pancake, spring roll, rice bowl, hingga pastry, yang secara umum dinilai enak dan sebanding dengan harga, meskipun beberapa menu makanan dianggap biasa dibandingkan kualitas kopinya.\n\nUntuk fasilitas, Luthier Coffee menyediakan area duduk indoor dengan suasana yang cukup nyaman serta WiFi yang kencang, sehingga mendukung aktivitas nongkrong maupun kerja ringan. Namun, beberapa ulasan menyebutkan bahwa tempat bisa terasa ramai di jam tertentu dan sebagian area memiliki pencahayaan yang agak redup. Meski begitu, pelayanan barista yang ramah dan pengetahuan mereka tentang kopi menjadi nilai tambah yang sering diapresiasi oleh pengunjung."
+    "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Luthier Coffee dikenal sebagai specialty coffee shop dengan suasana yang cozy dan cukup estetis. Tempat ini sering disebut sebagai rumah bagi barista berprestasi tingkat nasional, sehingga memberikan kesan serius terhadap kualitas kopi yang disajikan. Suasananya cenderung santai namun tetap profesional, cocok untuk nongkrong, menikmati kopi dengan tenang, atau sekadar bersantai bersama teman.\n\nDari sisi menu, kopi menjadi daya tarik utama dengan pilihan espresso-based dan manual brew menggunakan berbagai biji kopi lokal maupun impor. Banyak pengunjung menilai kualitas kopi berada di level tinggi, dengan rasa yang konsisten dan berkarakter. Selain minuman, tersedia juga menu makanan dan dessert seperti pancake, spring roll, rice bowl, hingga pastry, yang secara umum dinilai enak dan sebanding dengan harga, meskipun beberapa menu makanan dianggap biasa dibandingkan kualitas kopinya.\n\nUntuk fasilitas, Luthier Coffee menyediakan area duduk indoor dengan suasana yang cukup nyaman serta WiFi yang kencang, sehingga mendukung aktivitas nongkrong maupun kerja ringan. Namun, beberapa ulasan menyebutkan bahwa tempat bisa terasa ramai di jam tertentu dan sebagian area memiliki pencahayaan yang agak redup. Meski begitu, pelayanan barista yang ramah dan pengetahuan mereka tentang kopi menjadi nilai tambah yang sering diapresiasi oleh pengunjung.",
+    "images": {
+      "gallery": ["indoor", "outdoor"],
+      "menu": ["menu", "menu2"]
+    }
   },
   {
     "id": 4,
@@ -85,7 +92,11 @@
       "kerja kelompok",
       "meeting"
     ],
-    "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Dobu Coffee dikenal sebagai tempat nongkrong yang cukup luas dengan suasana santai dan nyaman. Tersedia area indoor dan outdoor, termasuk area belakang yang sering disebut lebih nyaman untuk bersantai atau menikmati live music. Tempat ini juga kerap dipilih untuk hangout hingga malam hari karena atmosfernya yang rileks dan tidak terburu-buru.\n\nDari sisi menu, Dobu Coffee menawarkan pilihan kopi dan makanan dengan harga yang relatif terjangkau. Beberapa pengunjung merekomendasikan menu makanan lokal seperti pindang dan patin bakar, serta minuman non-kopi yang cukup variatif. Secara umum, rasa makanan dan minuman dinilai cukup memuaskan dan sebanding dengan harga, meskipun ada beberapa catatan terkait ketersediaan menu di waktu tertentu.\n\nUntuk fasilitas, Dobu Coffee menyediakan WiFi, AC, serta area duduk yang mendukung aktivitas kerja kelompok, meeting, maupun acara kecil. Pelayanan sering disebut ramah dan membantu, namun pada jam ramai beberapa pengunjung mencatat keterbatasan meja serta parkir mobil yang mengandalkan area pinggir jalan. Datang di luar jam sibuk biasanya memberikan pengalaman yang lebih nyaman."
+    "description": "Berdasarkan berbagai ulasan pengunjung di Google Maps, Dobu Coffee dikenal sebagai tempat nongkrong yang cukup luas dengan suasana santai dan nyaman. Tersedia area indoor dan outdoor, termasuk area belakang yang sering disebut lebih nyaman untuk bersantai atau menikmati live music. Tempat ini juga kerap dipilih untuk hangout hingga malam hari karena atmosfernya yang rileks dan tidak terburu-buru.\n\nDari sisi menu, Dobu Coffee menawarkan pilihan kopi dan makanan dengan harga yang relatif terjangkau. Beberapa pengunjung merekomendasikan menu makanan lokal seperti pindang dan patin bakar, serta minuman non-kopi yang cukup variatif. Secara umum, rasa makanan dan minuman dinilai cukup memuaskan dan sebanding dengan harga, meskipun ada beberapa catatan terkait ketersediaan menu di waktu tertentu.\n\nUntuk fasilitas, Dobu Coffee menyediakan WiFi, AC, serta area duduk yang mendukung aktivitas kerja kelompok, meeting, maupun acara kecil. Pelayanan sering disebut ramah dan membantu, namun pada jam ramai beberapa pengunjung mencatat keterbatasan meja serta parkir mobil yang mengandalkan area pinggir jalan. Datang di luar jam sibuk biasanya memberikan pengalaman yang lebih nyaman.",
+    "images": {
+      "gallery": ["indoor", "outdoor", "outdoor2", "outdoor3"],
+      "menu": ["menu", "menu2"]
+    }
   },
   {
     "id": 5,
@@ -110,7 +121,11 @@
       "makan",
       "nongkrong"
     ],
-    "description": "MamMee Bakery & Kopihaus dikenal sebagai restoran dan bakery yang nyaman dengan pilihan menu yang sangat beragam. Tempat ini memiliki area yang cukup luas dengan dua lantai, sehingga sering dipilih untuk makan bersama keluarga, pertemuan kerja, maupun acara kecil. Suasananya tergolong cozy dan kasual, meskipun pada jam-jam tertentu tempat bisa terasa cukup ramai.\n\nDari sisi menu, MamMee menyajikan berbagai pilihan makanan mulai dari hidangan khas Palembang seperti pindang, pempek, dan nasi goreng, hingga menu western, bakery, cake, dan dessert. Banyak pengunjung menilai rasa makanan enak dengan porsi yang cukup memuaskan, serta variasi menu yang membuat tempat ini cocok untuk sarapan, makan siang, hingga makan malam. Harga dinilai relatif standar untuk ukuran restoran, dengan beberapa menu dianggap premium.\n\nUntuk fasilitas dan pelayanan, MamMee Bakery & Kopihaus menyediakan area indoor ber-AC, smoking area, WiFi, serta parkir yang cukup memadai. Pelayanan umumnya dinilai ramah dan cepat, meskipun beberapa ulasan mencatat kendala saat kondisi ramai, terutama terkait waktu tunggu dan pesanan online. Secara keseluruhan, tempat ini sering direkomendasikan sebagai pilihan aman untuk makan bersama, meeting, maupun sekadar nongkrong santai."
+    "description": "MamMee Bakery & Kopihaus dikenal sebagai restoran dan bakery yang nyaman dengan pilihan menu yang sangat beragam. Tempat ini memiliki area yang cukup luas dengan dua lantai, sehingga sering dipilih untuk makan bersama keluarga, pertemuan kerja, maupun acara kecil. Suasananya tergolong cozy dan kasual, meskipun pada jam-jam tertentu tempat bisa terasa cukup ramai.\n\nDari sisi menu, MamMee menyajikan berbagai pilihan makanan mulai dari hidangan khas Palembang seperti pindang, pempek, dan nasi goreng, hingga menu western, bakery, cake, dan dessert. Banyak pengunjung menilai rasa makanan enak dengan porsi yang cukup memuaskan, serta variasi menu yang membuat tempat ini cocok untuk sarapan, makan siang, hingga makan malam. Harga dinilai relatif standar untuk ukuran restoran, dengan beberapa menu dianggap premium.\n\nUntuk fasilitas dan pelayanan, MamMee Bakery & Kopihaus menyediakan area indoor ber-AC, smoking area, WiFi, serta parkir yang cukup memadai. Pelayanan umumnya dinilai ramah dan cepat, meskipun beberapa ulasan mencatat kendala saat kondisi ramai, terutama terkait waktu tunggu dan pesanan online. Secara keseluruhan, tempat ini sering direkomendasikan sebagai pilihan aman untuk makan bersama, meeting, maupun sekadar nongkrong santai.",
+    "images": {
+      "gallery": ["indoor", "indoor2"],
+      "menu": ["menu", "menu2"]
+    }
   },
   {
     "id": 6,
@@ -135,7 +150,11 @@
       "kerja ringan",
       "nongkrong"
     ],
-    "description": "Cetroo Coffee Rajawali dikenal sebagai coffee shop kecil yang nyaman dengan suasana santai dan bersih. Lokasinya yang berada di sekitar area kampus membuat tempat ini sering dijadikan pilihan untuk nongkrong ringan atau sekadar menikmati kopi di sela aktivitas. Meski ukurannya tidak terlalu besar, tempat ini memiliki spot foto yang cukup menarik dan suasana yang tenang.\n\nDari sisi menu, Cetroo Coffee menawarkan pilihan kopi dan minuman yang dinilai enak dengan harga yang relatif terjangkau. Beberapa pengunjung menyebut kualitas kopi cukup memuaskan untuk ukuran coffee shop di area kampus, sehingga cocok bagi yang ingin ngopi santai tanpa harus mengeluarkan banyak biaya.\n\nUntuk fasilitas, tempat ini menyediakan area duduk yang mendukung aktivitas kerja ringan atau belajar. Parkiran dinilai cukup memadai, dan suasana yang tidak terlalu ramai menjadi nilai tambah bagi pengunjung yang mencari tempat ngopi yang simpel dan tidak ribut. Secara keseluruhan, Cetroo Coffee Rajawali sering direkomendasikan sebagai tempat nongkrong sederhana dengan ambience yang nyaman."
+    "description": "Cetroo Coffee Rajawali dikenal sebagai coffee shop kecil yang nyaman dengan suasana santai dan bersih. Lokasinya yang berada di sekitar area kampus membuat tempat ini sering dijadikan pilihan untuk nongkrong ringan atau sekadar menikmati kopi di sela aktivitas. Meski ukurannya tidak terlalu besar, tempat ini memiliki spot foto yang cukup menarik dan suasana yang tenang.\n\nDari sisi menu, Cetroo Coffee menawarkan pilihan kopi dan minuman yang dinilai enak dengan harga yang relatif terjangkau. Beberapa pengunjung menyebut kualitas kopi cukup memuaskan untuk ukuran coffee shop di area kampus, sehingga cocok bagi yang ingin ngopi santai tanpa harus mengeluarkan banyak biaya.\n\nUntuk fasilitas, tempat ini menyediakan area duduk yang mendukung aktivitas kerja ringan atau belajar. Parkiran dinilai cukup memadai, dan suasana yang tidak terlalu ramai menjadi nilai tambah bagi pengunjung yang mencari tempat ngopi yang simpel dan tidak ribut. Secara keseluruhan, Cetroo Coffee Rajawali sering direkomendasikan sebagai tempat nongkrong sederhana dengan ambience yang nyaman.",
+    "images": {
+      "gallery": ["indoor", "indoor2"],
+      "menu": ["menu"]
+    }
   },
   {
     "id": 7,
@@ -152,7 +171,11 @@
     "instagram": "https://www.instagram.com/kopiloka_sumsel/",
     "rating": 4.8,
     "vibe": ["santai", "kasual", "coffee to-go", "diskusi ringan", "sederhana"],
-    "description": "Kopi Siloka 4 dikenal sebagai kedai kopi berkonsep sederhana yang fokus pada kualitas minuman. Berdasarkan ulasan pengunjung, tempat ini sering dijadikan pilihan aman untuk ngopi cepat maupun nongkrong singkat, dengan suasana yang santai dan tidak terlalu ramai. Beberapa pengunjung juga menyebut tempat ini cukup nyaman untuk diskusi ringan.\n\nDari sisi menu, kopi menjadi andalan utama dengan pilihan minuman yang dinilai enak dan konsisten. Tersedia juga menu manual brew meskipun pilihannya tidak terlalu banyak, serta beberapa minuman non-kopi seperti jus. Secara umum, kualitas rasa dianggap sebanding dengan harga yang terjangkau, menjadikannya pilihan praktis untuk coffee to-go.\n\nUntuk fasilitas, Kopi Siloka 4 menyediakan area duduk terbatas di bagian depan toko yang cukup untuk singgah sebentar. Pelayanan sering disebut ramah dan responsif, meskipun beberapa ulasan menyarankan penambahan variasi menu makanan agar pengunjung bisa berlama-lama. Tempat ini cocok bagi yang mencari kopi enak dengan konsep simpel dan efisien."
+    "description": "Kopi Siloka 4 dikenal sebagai kedai kopi berkonsep sederhana yang fokus pada kualitas minuman. Berdasarkan ulasan pengunjung, tempat ini sering dijadikan pilihan aman untuk ngopi cepat maupun nongkrong singkat, dengan suasana yang santai dan tidak terlalu ramai. Beberapa pengunjung juga menyebut tempat ini cukup nyaman untuk diskusi ringan.\n\nDari sisi menu, kopi menjadi andalan utama dengan pilihan minuman yang dinilai enak dan konsisten. Tersedia juga menu manual brew meskipun pilihannya tidak terlalu banyak, serta beberapa minuman non-kopi seperti jus. Secara umum, kualitas rasa dianggap sebanding dengan harga yang terjangkau, menjadikannya pilihan praktis untuk coffee to-go.\n\nUntuk fasilitas, Kopi Siloka 4 menyediakan area duduk terbatas di bagian depan toko yang cukup untuk singgah sebentar. Pelayanan sering disebut ramah dan responsif, meskipun beberapa ulasan menyarankan penambahan variasi menu makanan agar pengunjung bisa berlama-lama. Tempat ini cocok bagi yang mencari kopi enak dengan konsep simpel dan efisien.",
+    "images": {
+      "gallery": ["indoor", "outdoor"],
+      "menu": ["menu"]
+    }
   },
   {
     "id": 8,
@@ -169,7 +192,11 @@
     "instagram": "https://www.instagram.com/pointcoffeeid/",
     "rating": 4.3,
     "vibe": ["cepat", "kasual", "coffee to-go", "ramai", "transit"],
-    "description": "Point Coffee Jendsu 4 dikenal sebagai kedai kopi dengan konsep praktis yang menyatu dengan minimarket, sehingga mudah dijangkau dan cocok untuk singgah cepat kapan saja. Lokasinya yang berada di jalan utama membuat tempat ini sering ramai, terutama oleh pengunjung yang ingin istirahat sejenak atau membeli kopi saat perjalanan.\n\nDari sisi menu, Point Coffee menawarkan berbagai varian minuman kopi dan non-kopi dengan harga yang relatif terjangkau. Beberapa menu seperti kopi gula aren dan promo buy one get one cukup sering disebut pengunjung. Rasa minuman dinilai konsisten dan sesuai dengan standar jaringan Point Coffee.\n\nUntuk fasilitas dan pelayanan, area duduk tersedia namun terbatas dan sering menjadi catatan dalam ulasan, terutama terkait kenyamanan duduk serta pengelolaan parkir. Meski demikian, keberadaan layanan 24 jam dan pilihan take away membuat Point Coffee Jendsu 4 tetap menjadi pilihan praktis bagi pengunjung yang membutuhkan kopi cepat di area pusat kota."
+    "description": "Point Coffee Jendsu 4 dikenal sebagai kedai kopi dengan konsep praktis yang menyatu dengan minimarket, sehingga mudah dijangkau dan cocok untuk singgah cepat kapan saja. Lokasinya yang berada di jalan utama membuat tempat ini sering ramai, terutama oleh pengunjung yang ingin istirahat sejenak atau membeli kopi saat perjalanan.\n\nDari sisi menu, Point Coffee menawarkan berbagai varian minuman kopi dan non-kopi dengan harga yang relatif terjangkau. Beberapa menu seperti kopi gula aren dan promo buy one get one cukup sering disebut pengunjung. Rasa minuman dinilai konsisten dan sesuai dengan standar jaringan Point Coffee.\n\nUntuk fasilitas dan pelayanan, area duduk tersedia namun terbatas dan sering menjadi catatan dalam ulasan, terutama terkait kenyamanan duduk serta pengelolaan parkir. Meski demikian, keberadaan layanan 24 jam dan pilihan take away membuat Point Coffee Jendsu 4 tetap menjadi pilihan praktis bagi pengunjung yang membutuhkan kopi cepat di area pusat kota.",
+    "images": {
+      "gallery": ["indoor", "indoor2"],
+      "menu": ["menu", "menu2"]
+    }
   },
   {
     "id": 9,
@@ -193,7 +220,11 @@
       "introvert friendly",
       "hidden gem"
     ],
-    "description": "KYLO Coffee and Eatery dikenal sebagai kafe berkonsep minimalis yang nyaman dan bersahabat, terutama bagi pelajar dan mahasiswa. Banyak pengunjung menyebut suasananya tenang, cozy, dan cocok untuk nongkrong santai maupun mengerjakan tugas. Lokasinya yang berada di pinggir jalan utama membuat tempat ini mudah diakses, namun tetap terasa cukup privat.\n\nDari sisi menu, KYLO menawarkan beragam pilihan kopi dan non-kopi dengan harga yang terjangkau. Rasa minuman dan makanan dinilai konsisten dan memuaskan, dengan beberapa menu favorit seperti nasi goreng, matcha, serta minuman botol yang praktis untuk dibawa bepergian. Banyak ulasan menilai kualitas rasa yang didapat terasa lebih tinggi dibandingkan harganya.\n\nUntuk fasilitas dan pelayanan, barista dan staf sering disebut ramah dan komunikatif. Tempat ini juga kerap menjadi pilihan untuk berkumpul bersama teman atau keluarga kecil, dengan suasana yang tidak bising dan nyaman untuk berlama-lama. Secara keseluruhan, KYLO Coffee and Eatery dianggap sebagai hidden gem di pusat kota Palembang dengan nilai yang sangat worth it."
+    "description": "KYLO Coffee and Eatery dikenal sebagai kafe berkonsep minimalis yang nyaman dan bersahabat, terutama bagi pelajar dan mahasiswa. Banyak pengunjung menyebut suasananya tenang, cozy, dan cocok untuk nongkrong santai maupun mengerjakan tugas. Lokasinya yang berada di pinggir jalan utama membuat tempat ini mudah diakses, namun tetap terasa cukup privat.\n\nDari sisi menu, KYLO menawarkan beragam pilihan kopi dan non-kopi dengan harga yang terjangkau. Rasa minuman dan makanan dinilai konsisten dan memuaskan, dengan beberapa menu favorit seperti nasi goreng, matcha, serta minuman botol yang praktis untuk dibawa bepergian. Banyak ulasan menilai kualitas rasa yang didapat terasa lebih tinggi dibandingkan harganya.\n\nUntuk fasilitas dan pelayanan, barista dan staf sering disebut ramah dan komunikatif. Tempat ini juga kerap menjadi pilihan untuk berkumpul bersama teman atau keluarga kecil, dengan suasana yang tidak bising dan nyaman untuk berlama-lama. Secara keseluruhan, KYLO Coffee and Eatery dianggap sebagai hidden gem di pusat kota Palembang dengan nilai yang sangat worth it.",
+    "images": {
+      "gallery": ["indoor", "outdoor"],
+      "menu": ["menu"]
+    }
   },
   {
     "id": 10,
@@ -214,7 +245,11 @@
       "cozy",
       "nongkrong lama"
     ],
-    "description": "Kopi Lawas dikenal sebagai kedai kopi independen dengan nuansa vintage yang kuat dan suasana santai yang membuat pengunjung betah berlama-lama. Banyak ulasan menyebut tempat ini sebagai ruang aman untuk ngobrol, bercerita, atau sekadar melepas penat, dengan ambience yang tenang dan terasa seperti “rumah sendiri”.\n\nDari sisi menu, Kopi Lawas menawarkan beragam pilihan kopi dan non-kopi dengan harga yang terjangkau. Beberapa menu khas seperti kopi susu lawas dengan sentuhan rempah sering disebut memiliki rasa unik dan berbeda. Kualitas minuman dinilai konsisten, cocok untuk pengunjung yang ingin menikmati kopi tanpa terburu-buru.\n\nUntuk fasilitas, tersedia area indoor dan outdoor dengan tempat duduk yang cukup luas serta parkiran yang memadai untuk motor maupun mobil. Tempat ini kerap dijadikan pilihan untuk nongkrong anak skena, mengerjakan tugas, atau diskusi santai. Secara keseluruhan, Kopi Lawas dianggap sebagai salah satu spot ngopi paling nyaman dengan karakter kuat di Palembang."
+    "description": "Kopi Lawas dikenal sebagai kedai kopi independen dengan nuansa vintage yang kuat dan suasana santai yang membuat pengunjung betah berlama-lama. Banyak ulasan menyebut tempat ini sebagai ruang aman untuk ngobrol, bercerita, atau sekadar melepas penat, dengan ambience yang tenang dan terasa seperti “rumah sendiri”.\n\nDari sisi menu, Kopi Lawas menawarkan beragam pilihan kopi dan non-kopi dengan harga yang terjangkau. Beberapa menu khas seperti kopi susu lawas dengan sentuhan rempah sering disebut memiliki rasa unik dan berbeda. Kualitas minuman dinilai konsisten, cocok untuk pengunjung yang ingin menikmati kopi tanpa terburu-buru.\n\nUntuk fasilitas, tersedia area indoor dan outdoor dengan tempat duduk yang cukup luas serta parkiran yang memadai untuk motor maupun mobil. Tempat ini kerap dijadikan pilihan untuk nongkrong anak skena, mengerjakan tugas, atau diskusi santai. Secara keseluruhan, Kopi Lawas dianggap sebagai salah satu spot ngopi paling nyaman dengan karakter kuat di Palembang.",
+    "images": {
+      "gallery": ["outdoor", "outdoor2"],
+      "menu": ["menu", "menu2"]
+    }
   },
   {
     "id": 11,
@@ -1475,8 +1510,8 @@
     "address": "Kec. Alang-Alang Lebar, Kota Palembang, Sumatera Selatan",
     "maps": "N/A",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": -2.9137606,
+      "lng": 104.6920027
     },
     "open_hours": "Setiap hari (Saran konfirmasi waktu operasional)",
     "price_range": "Rp 15.000 – Rp 35.000",

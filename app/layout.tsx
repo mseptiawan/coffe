@@ -1,51 +1,42 @@
-"use client";
-
+import { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { usePathname } from "next/navigation";
-import "leaflet/dist/leaflet.css";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "leaflet/dist/leaflet.css";
+import ClientLayout from "@/components/ClientLayout"; // Kita pindahkan logic client ke sini
 
-// 1. Definisikan font di luar komponen agar bisa diakses
 const jakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
 });
+
+// --- METADATA GLOBAL (Server Side) ---
+export const metadata: Metadata = {
+  title: {
+    default: "Palembang Coffee Map | Temukan Cafe Terbaik",
+    template: "%s | Palembang Coffee Map", // Ini akan otomatis nambahin nama cafe di belakang
+  },
+  description:
+    "Direktori cafe terlengkap di Palembang. Temukan tempat nongkrong, WFC, dan kopi terbaik.",
+  keywords: [
+    "Cafe Palembang",
+    "Kopi Palembang",
+    "WFC Palembang",
+    "Tempat Nongkrong",
+  ],
+};
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-
-  // 2. Cek apakah sedang di halaman detail cafe
-  const isDetailPage = pathname.startsWith("/cafe/");
-
   return (
     <html lang="id">
       <body
-        className={`${
-          jakartaSans.className
-        } antialiased transition-colors duration-500 ${
-          isDetailPage ? "bg-[#0A0A0A]" : ""
-        }`}
+        className={`${jakartaSans.className} antialiased transition-colors duration-500`}
       >
-        {/* Wrapper tambahan untuk memastikan gradasi Amber di CSS 
-           tertutup sempurna saat di halaman detail 
-        */}
-        <div
-          className={`min-h-screen flex flex-col ${
-            isDetailPage ? "bg-[#0A0A0A]" : "bg-transparent"
-          }`}
-        >
-          <Navbar />
-
-          <main className="flex-grow pt-20 md:pt-24">{children}</main>
-
-          <Footer />
-        </div>
+        {/* Pindahkan logic pathname ke component ClientLayout agar metadata tetap bisa di Server */}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

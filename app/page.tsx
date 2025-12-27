@@ -8,15 +8,25 @@ import dynamic from "next/dynamic";
 import ServiceCTA from "@/components/ServiceCTA";
 import SearchBar from "@/components/SearchBar";
 import { Plus } from "lucide-react";
+import SupportModal from "@/components/SupportModal";
 
 export default function Home() {
   // SEARCH STATE
   const [query, setQuery] = useState("");
 
   // LOAD MORE STATE
-  const initialItems = 9;
-  const [limit, setLimit] = useState(initialItems);
+  // Berikan nilai default awal (misal 9)
+  const [limit, setLimit] = useState(9);
 
+  // Gunakan useEffect untuk mendeteksi layar mobile
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768; // Standar breakpoint mobile (md di Tailwind)
+    if (isMobile) {
+      setLimit(10);
+    } else {
+      setLimit(9);
+    }
+  }, []); // Berjalan sekali saat mount
   const CafeMap = dynamic(() => import("@/components/CafeMap"), {
     ssr: false,
   });
@@ -31,11 +41,6 @@ export default function Home() {
     );
   });
 
-  // RESET LIMIT SAAT SEARCH BERUBAH
-  useEffect(() => {
-    setLimit(initialItems);
-  }, [query]);
-
   // DATA YANG DITAMPILKAN (Bukan di-page, tapi di-slice sampai limit)
   const currentCafes = filteredCafes.slice(0, limit);
 
@@ -46,6 +51,7 @@ export default function Home() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 md:px-6 py-12 space-y-6">
+      <SupportModal /> {/* Taruh di sini */}
       {/* HEADER */}
       {/* Container Header dibuat Center secara keseluruhan */}
       <header className="flex flex-col items-center text-center space-y-6 md:space-y-8">
@@ -85,12 +91,10 @@ export default function Home() {
           </p>
         </div>
       </header>
-
       {/* MAP SECTION */}
       <section className="overflow-hidden rounded-3xl border-4 border-zinc-800 shadow-2xl">
         <CafeMap cafes={filteredCafes} />
       </section>
-
       {/* MAP INFO */}
       <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-white/70 font-medium">
         <span className="flex items-center gap-1.5">
@@ -102,12 +106,10 @@ export default function Home() {
         <span className="text-zinc-600">|</span>
         <span>💻 WFC Friendly</span>
       </div>
-
       {/* CTA SECTION */}
       <div className="-mt-6">
         <ServiceCTA />
       </div>
-
       {/* LIST SECTION */}
       <div className="space-y-8 pt-6">
         <div className="flex items-center justify-between px-1">
@@ -176,6 +178,45 @@ export default function Home() {
           </p>
         )}
       </div>
+      {/* FLOATING SAWERIA BUTTON */}
+      {/* FLOATING SAWERIA BUTTON */}
+      <a
+        href="https://saweria.co/mseptiawan"
+        target="_blank"
+        rel="noopener noreferrer"
+        // Ukuran p-2.5 di mobile biar gak kegedean, md:px-5 md:py-3 di desktop
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[999] flex items-center gap-2 rounded-full bg-[#faad14] p-2.5 md:px-5 md:py-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10 transition-all hover:scale-110 active:scale-95 group"
+      >
+        <div className="relative">
+          {/* Notifikasi Dot - Dibuat lebih kecil di mobile */}
+          <div className="absolute -right-0.5 -top-0.5 flex h-2 w-2 md:h-3 md:w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 md:h-3 md:w-3 bg-red-600"></span>
+          </div>
+
+          {/* SVG Icon - Ukuran adaptif */}
+          <svg
+            viewBox="0 0 24 24"
+            className="w-5 h-5 md:w-5 md:h-5 text-zinc-900 group-hover:rotate-12 transition-transform duration-300"
+            stroke="currentColor"
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </div>
+
+        {/* Text: Muncul di Desktop, di Mobile hanya icon biar bersih */}
+        <span className="hidden md:block text-[11px] font-black uppercase tracking-tighter text-zinc-900">
+          Traktir Kopi
+        </span>
+      </a>
     </main>
   );
 }

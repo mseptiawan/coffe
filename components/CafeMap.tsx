@@ -13,7 +13,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Navigation } from "lucide-react";
+import { Navigation, Coffee } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 import LeafletConfig from "./LeafletConfig";
 import { cafeImage } from "@/lib/cafeImage";
@@ -23,23 +23,39 @@ function CafePopupContent({ cafe }: { cafe: any }) {
 
   return (
     <div className="w-[180px] overflow-hidden bg-zinc-950 text-white rounded-xl border border-white/10 shadow-2xl">
-      <div className="relative h-24 w-full bg-zinc-900 flex items-center justify-center">
-        {!imgError ? (
-          <Image
-            src={cafeImage(cafe.slug, "cover", "cover")}
-            alt={cafe.name}
-            fill
-            className="object-cover"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="flex flex-col items-center justify-center p-2 text-center">
-            <span className="text-[9px] font-bold text-zinc-500 uppercase leading-tight">
-              Gambar tidak ditemukan
-            </span>
+      <div className="relative h-24 w-full bg-zinc-950 flex items-center justify-center overflow-hidden border-b border-white/5">
+        {/* Layer 1: Ambient Glow (Efek cahaya di pojok) */}
+        <div className="absolute -top-10 -left-10 w-32 h-32 bg-amber-500/10 blur-[40px] rounded-full" />
+        <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-indigo-500/10 blur-[40px] rounded-full" />
+
+        {/* Layer 2: Center Illustration */}
+        <div className="relative z-10 flex flex-col items-center gap-1">
+          <div className="relative">
+            <Coffee
+              size={28}
+              strokeWidth={1.5}
+              className="text-amber-500/50 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]"
+            />
+            {/* Decorative Ring kecil */}
+            <div className="absolute inset-0 scale-[1.8] border border-white/[0.03] rounded-full" />
           </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+
+          {/* Label halus */}
+          <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600 mt-2">
+            Coffee Directory
+          </span>
+        </div>
+
+        {/* Layer 3: Subtle Pattern Overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
+
+        {/* Gradient Overlay untuk transisi ke konten bawah */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent" />
       </div>
       <div className="p-3">
         <h4 className="font-black text-[10px] uppercase italic text-zinc-100 truncate">
