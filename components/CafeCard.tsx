@@ -38,7 +38,7 @@ export default function CafeCard({ cafe }: { cafe: Cafe }) {
 
             <div className="flex w-fit items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 md:py-1 text-[10px] md:text-sm font-bold text-amber-500 border border-amber-500/20">
               <Star size={10} className="md:w-3.5" fill="currentColor" />
-              {cafe.rating.toFixed(1)}
+              {cafe.rating && cafe.rating > 0 ? cafe.rating.toFixed(1) : "-"}
             </div>
           </div>
 

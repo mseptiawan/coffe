@@ -17,6 +17,44 @@ import { Navigation } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 import LeafletConfig from "./LeafletConfig";
 import { cafeImage } from "@/lib/cafeImage";
+// Komponen kecil untuk menangani pengecekan gambar di dalam Popup
+function CafePopupContent({ cafe }: { cafe: any }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className="w-[180px] overflow-hidden bg-zinc-950 text-white rounded-xl border border-white/10 shadow-2xl">
+      <div className="relative h-24 w-full bg-zinc-900 flex items-center justify-center">
+        {!imgError ? (
+          <Image
+            src={cafeImage(cafe.slug, "cover", "cover")}
+            alt={cafe.name}
+            fill
+            className="object-cover"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center p-2 text-center">
+            <span className="text-[9px] font-bold text-zinc-500 uppercase leading-tight">
+              Gambar tidak ditemukan
+            </span>
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+      </div>
+      <div className="p-3">
+        <h4 className="font-black text-[10px] uppercase italic text-zinc-100 truncate">
+          {cafe.name}
+        </h4>
+        <Link
+          href={`/cafe/${cafe.slug}`}
+          className="mt-2 block text-center bg-white text-black font-black text-[8px] uppercase py-2 rounded-lg hover:bg-amber-500 transition-colors"
+        >
+          Open Detail
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 // 📡 Komponen Locate Me dengan Marker Lokasi User
 function LocateButton({
@@ -131,28 +169,8 @@ export default function CafeMap({ cafes }: { cafes: any[] }) {
               icon={coffeeIcon}
             >
               <Popup className="premium-popup">
-                <div className="w-[180px] overflow-hidden bg-zinc-950 text-white rounded-xl border border-white/10 shadow-2xl">
-                  <div className="relative h-24 w-full bg-zinc-900">
-                    <Image
-                      src={cafeImage(cafe.slug, "cover", "cover")}
-                      alt={cafe.name}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
-                  </div>
-                  <div className="p-3">
-                    <h4 className="font-black text-[10px] uppercase italic text-zinc-100 truncate">
-                      {cafe.name}
-                    </h4>
-                    <Link
-                      href={`/cafe/${cafe.slug}`}
-                      className="mt-2 block text-center bg-white text-black font-black text-[8px] uppercase py-2 rounded-lg hover:bg-amber-500 transition-colors"
-                    >
-                      Open Detail
-                    </Link>
-                  </div>
-                </div>
+                {/* Cukup panggil komponen di atas, style Popup kamu tetap aman */}
+                <CafePopupContent cafe={cafe} />
               </Popup>
             </Marker>
           ))}

@@ -31,13 +31,13 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
   const handleOpenImage = (src: string) => setSelectedImage(src);
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-zinc-100 pb-16">
+    <main className="min-h-screen bg-[#0A0A0A] text-zinc-100 pb-1">
       {/* 1. MODAL LIGHTBOX */}
       {selectedImage && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md">
+        <div className="fixed inset-0 z-[10000] bg-black/95 flex items-center justify-center p-4 backdrop-blur-md">
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 p-3 bg-zinc-800 rounded-full text-white hover:bg-zinc-700 transition-all"
+            className="absolute top-6 right-6 z-[10000] p-3 bg-zinc-800 rounded-full text-white hover:bg-zinc-700 transition-all"
           >
             <X size={24} />
           </button>
@@ -54,7 +54,7 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
 
       {/* 2. HEADER NAV */}
       {/* 2. HEADER NAV (Modern Glassmorphism) */}
-      <nav className="sticky top-0 z-[60] bg-black/40 backdrop-blur-xl border-b border-white/5 px-4 py-3">
+      <nav className="sticky top-0 z-[60] bg-[#0A0A0A] backdrop-blur-xl  px-4 py-3">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           {/* Back Button dengan Blur Background tipis */}
           <Link
@@ -73,10 +73,14 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
               href={cafe.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-white/10 rounded-full text-zinc-300 hover:text-white transition-all text-xs font-bold tracking-widest active:scale-95"
+              className="group flex items-center gap-2 px-4 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-white/10 rounded-full text-zinc-300 hover:text-white transition-all text-xs font-bold tracking-widest active:scale-95 shadow-lg"
             >
-              <Instagram size={16} />
-              <span className="hidden md:block uppercase">Instagram</span>
+              {/* Ikon tetap tipis dan elegan */}
+              <Instagram
+                size={16}
+                className="group-hover:text-pink-500 transition-colors"
+              />
+              <span className="uppercase">Instagram</span>
             </a>
           </div>
         </div>
@@ -86,11 +90,8 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
       {/* 3. HERO SECTION (Tinggi Desktop +20px & Mobile Safe) */}
       <section className="relative w-full bg-[#0A0A0A]">
         <div className="mx-auto max-w-6xl px-0 md:px-6 md:pt-6">
-          {/* - aspect-[4/3] di mobile supaya gambar lebih tinggi & tidak terpotong teks
-              - md:h-[520px] tinggi khusus desktop (sudah tambah 20px)
-              - rounded-xl (tidak terlalu tajam, tidak terlalu bulat)
-          */}
           <div className="relative aspect-[4/3] md:aspect-auto md:h-[540px] w-full overflow-hidden md:rounded-xl border-b md:border border-white/10 bg-zinc-900">
+            {/* LOGIKA GAMBAR / PLACEHOLDER */}
             {cafe.images?.cover ? (
               <Image
                 src={cafeImage(cafe.slug, "cover", "cover")}
@@ -101,28 +102,38 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
                 sizes="(max-width: 768px) 100vw, 1200px"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center text-zinc-600">
-                <Coffee size={48} />
+              /* Tampilan Premium saat gambar tidak ada */
+              <div className="relative flex h-full w-full items-center justify-center bg-zinc-950">
+                {/* Efek Cahaya Dekoratif di Background */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amber-500/10 blur-[120px] rounded-full" />
+
+                <div className="z-10 flex flex-col items-center gap-4 opacity-20">
+                  <Coffee size={80} strokeWidth={1} className="text-white" />
+                  <span className="text-xs font-black uppercase tracking-[0.2em] text-white">
+                    Image Not Available
+                  </span>
+                </div>
               </div>
             )}
 
-            {/* Overlay Gradient: Dipertebal di bagian bawah untuk keterbacaan */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+            {/* Overlay Gradient: Tetap ada agar teks judul selalu kontras */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
             {/* Title & Info Over Image */}
-            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-12">
+            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-12 z-20">
               <div className="flex items-center gap-1.5 mb-2">
                 <Star size={14} className="fill-amber-500 text-amber-500" />
                 <span className="text-amber-500 font-bold text-sm">
-                  {cafe.rating}
+                  {/* Fix rating toFixed agar tidak error jika rating null */}
+                  {cafe.rating ? cafe.rating.toFixed(1) : "0.0"}
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-6xl font-black tracking-tighter uppercase italic text-white leading-[0.9] drop-shadow-xl">
+              <h1 className="text-3xl md:text-6xl font-black tracking-tighter uppercase italic text-white leading-[0.9] drop-shadow-2xl">
                 {cafe.name}
               </h1>
 
-              <div className="flex items-start gap-2 text-zinc-300 mt-3 max-w-md md:max-w-xl">
+              <div className="flex items-start gap-2 text-zinc-300 mt-4 max-w-md md:max-w-xl">
                 <MapPin
                   size={16}
                   className="mt-0.5 shrink-0 text-amber-500 md:w-5 md:h-5"
@@ -141,7 +152,7 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
           <a
             href={cafe.maps}
             target="_blank"
-            className="flex items-center justify-center gap-3 w-full bg-white text-black py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-amber-500 transition-all active:scale-[0.98] shadow-xl"
+            className="flex items-center justify-center gap-3 w-full bg-amber-500 text-black py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-amber-600 transition-all active:scale-[0.98] shadow-[0_0_20px_rgba(245,158,11,0.2)]"
           >
             <Navigation size={18} fill="currentColor" />
             Directly Open in Maps
@@ -201,31 +212,47 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
 
           <div className="min-h-[200px]">
             {activeTab === "gallery" ? (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                {cafe.images?.gallery?.map((img: string) => {
-                  const src = cafeImage(cafe.slug, `gallery/${img}`, "gallery");
-                  return (
-                    <div
-                      key={img}
-                      onClick={() => handleOpenImage(src)}
-                      className="group relative aspect-square rounded-xl overflow-hidden cursor-zoom-in border border-white/5"
-                    >
-                      <Image
-                        src={src}
-                        alt="Gallery"
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Maximize2 size={20} className="text-white" />
+              /* --- LOGIKA GALLERY --- */
+              cafe.images?.gallery && cafe.images.gallery.length > 0 ? (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  {cafe.images.gallery.map((img: string) => {
+                    const src = cafeImage(
+                      cafe.slug,
+                      `gallery/${img}`,
+                      "gallery"
+                    );
+                    return (
+                      <div
+                        key={img}
+                        onClick={() => handleOpenImage(src)}
+                        className="group relative aspect-square rounded-xl overflow-hidden cursor-zoom-in border border-white/5"
+                      >
+                        <Image
+                          src={src}
+                          alt="Gallery"
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <Maximize2 size={20} className="text-white" />
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
+                    );
+                  })}
+                </div>
+              ) : (
+                /* Empty State Gallery */
+                <div className="flex flex-col items-center justify-center py-12 bg-zinc-900/30 rounded-2xl border border-dashed border-white/5">
+                  <ImageIcon size={32} className="text-zinc-700 mb-2" />
+                  <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">
+                    Belum ada foto galeri
+                  </p>
+                </div>
+              )
+            ) : /* --- LOGIKA MENU --- */
+            cafe.images?.menu && cafe.images.menu.length > 0 ? (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                {cafe.images?.menu?.map((img: string) => {
+                {cafe.images.menu.map((img: string) => {
                   const src = cafeImage(cafe.slug, `menu/${img}`, "menu");
                   return (
                     <div
@@ -242,6 +269,14 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
                     </div>
                   );
                 })}
+              </div>
+            ) : (
+              /* Empty State Menu */
+              <div className="flex flex-col items-center justify-center py-12 bg-zinc-900/30 rounded-2xl border border-dashed border-white/5">
+                <BookOpen size={32} className="text-zinc-700 mb-2" />
+                <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">
+                  Daftar menu belum tersedia
+                </p>
               </div>
             )}
           </div>
@@ -284,7 +319,7 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
 
         {/* MINI AGENCY FOOTER */}
         {/* 5. MINI AGENCY FOOTER (Premium Look) */}
-        <footer className="mt-20 pb-12 px-4">
+        <footer className="mt-20 pb-4 px-4">
           <div className="max-w-3xl mx-auto">
             {/* Garis Dekoratif Halus */}
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -295,7 +330,7 @@ export default function CafeDetail({ params }: { params: { slug: string } }) {
 
             <div className="text-center space-y-2">
               <p className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.6em] leading-none">
-                Pemenang Karir Agency
+                Pemenang Karir
               </p>
               <p className="text-[9px] font-bold text-zinc-800 uppercase tracking-[0.3em]">
                 Est. 2024 — Digital Curation

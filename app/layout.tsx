@@ -1,9 +1,13 @@
+"use client";
+
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { usePathname } from "next/navigation";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
-import Navbar from "@/components/Navbar"; // 👈 Pastikan path import benar
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+// 1. Definisikan font di luar komponen agar bisa diakses
 const jakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -14,19 +18,34 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
+  // 2. Cek apakah sedang di halaman detail cafe
+  const isDetailPage = pathname.startsWith("/cafe/");
+
   return (
     <html lang="id">
       <body
-        className={`${jakartaSans.className} bg-zinc-950 text-white antialiased`}
+        className={`${
+          jakartaSans.className
+        } antialiased transition-colors duration-500 ${
+          isDetailPage ? "bg-[#0A0A0A]" : ""
+        }`}
       >
-        {/* 1. Navbar diletakkan di sini agar tersedia di semua halaman */}
-        <Navbar />
+        {/* Wrapper tambahan untuk memastikan gradasi Amber di CSS 
+           tertutup sempurna saat di halaman detail 
+        */}
+        <div
+          className={`min-h-screen flex flex-col ${
+            isDetailPage ? "bg-[#0A0A0A]" : "bg-transparent"
+          }`}
+        >
+          <Navbar />
 
-        {/* 2. Wrapper dengan padding-top (pt-20) agar konten tidak tertutup Navbar */}
-        <div className="pt-20 md:pt-24">{children}</div>
+          <main className="flex-grow pt-20 md:pt-24">{children}</main>
 
-        <Footer />
-        {/* Bisa juga tambahin Footer di sini nanti */}
+          <Footer />
+        </div>
       </body>
     </html>
   );
