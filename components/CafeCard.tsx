@@ -9,7 +9,7 @@ type Cafe = {
   name: string;
   slug: string;
   address: string;
-  rating: number;
+  rating: number | null;
   vibe: string[];
 };
 
