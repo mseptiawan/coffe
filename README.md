@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Coffe – Palembang Coffee Map
 
-## Getting Started
+Coffe adalah platform web untuk menemukan coffee shop dan tempat nongkrong di Palembang secara cepat dan terkurasi. Aplikasi ini menyediakan peta interaktif, pencarian berbasis lokasi dan vibe, serta listing cafe dengan detail seperti rating dan kategori.
 
-First, run the development server:
+Project ini dibuat untuk membantu pengguna menemukan tempat yang sesuai untuk bekerja, bersantai, atau menikmati kopi di Palembang tanpa harus mencari manual di berbagai platform.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Fitur
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Peta interaktif lokasi coffee shop di Palembang  
+- Pencarian cafe berdasarkan nama, lokasi, atau vibe  
+- Listing 90+ cafe dengan rating dan kategori  
+- Detail cafe melalui halaman dinamis `/cafe/[slug]`  
+- Kategori seperti cozy, casual, specialty coffee, WFC friendly  
+- UI responsif untuk desktop dan mobile  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Teknologi
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js
+- TypeScript
+- Leaflet
+- CSS Modules
 
-## Learn More
+## Tujuan
 
-To learn more about Next.js, take a look at the following resources:
+Membangun sistem directory coffee shop berbasis pengalaman pengguna (vibe-based discovery) untuk mempermudah eksplorasi tempat di Palembang.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Stable v1.0.4
